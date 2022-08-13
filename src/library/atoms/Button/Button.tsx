@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { styled } from "../../../utils/stitches/stitches.config";
+import { styled } from "../../utils/stitches/stitches.config";
 
 export interface ButtonShape {
 	content: "icon";

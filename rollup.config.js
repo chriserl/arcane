@@ -7,7 +7,7 @@ import packageJSON from "./package.json";
 
 const config = [
 	{
-		input: "./src/index.ts",
+		input: "./src/library/index.ts",
 		output: {
 			file: packageJSON.main,
 			format: "esm",
@@ -30,7 +30,7 @@ const config = [
 		],
 	},
 	{
-		input: "src/index.ts",
+		input: "src/library/index.ts",
 		output: [{ file: "lib/index.d.ts", format: "esm" }],
 		plugins: [dts()],
 	},
