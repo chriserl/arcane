@@ -1,9 +1,22 @@
 {
 	"name": "arcane",
-	"version": "0.1.0",
+	"description": "Arcane UI Library by Montara Studio",
+	"version": "0.0.1",
 	"private": true,
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/chriserl/arcane.git"
+	},
+	"publishConfig": {
+		"@chriserl:registry": "https://npm.pkg.github.com"
+	},
+	"author": "chriserl",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/chriserl/arcane/issues"
+	},
 	"dependencies": {
 		"@stitches/react": "^1.2.8",
 		"@types/node": "^16.7.13",
