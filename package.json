@@ -1,9 +1,10 @@
 {
 	"name": "@chriserl/arcane",
 	"description": "Arcane UI Library by Montara Studio",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
+	"type": "module",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/chriserl/arcane.git"
