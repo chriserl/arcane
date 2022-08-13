@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { styled } from "../../stitches.config";
+import { styled } from "../../../utils/stitches/stitches.config";
 import { respx } from "../../../utils/stitches/respx";
 import { Button, ButtonShape } from "../../atoms/Button/Button";
 import { ArcaneLink, ArcaneLinkShape } from "../../atoms/ArcaneLink/ArcaneLink";
