@@ -1,4 +1,5 @@
 import { globalCss } from "./stitches.config";
+import "boxicons/css/boxicons.min.css";
 
 export const globalStyles = globalCss({
 	"@import": "../css/modernreset.css",
