@@ -6,15 +6,15 @@ import { Button, ButtonShape } from "../../atoms/Button/Button";
 import { ArcaneLink } from "../../atoms/ArcaneLink/ArcaneLink";
 import { useState } from "react";
 
-export interface NavLinksDataShape {
+export interface NavLinkFragmentDataShape {
 	name: string;
 	url: string;
 }
 
-export interface NavigationDataShape {
-	brand: string;
-	navLinksData: NavLinksDataShape[];
-	isolatedLink: NavLinksDataShape;
+export interface NavigationWidgetDataShape {
+	brand: NavLinkFragmentDataShape;
+	navLinksData: NavLinkFragmentDataShape[];
+	isolatedLink: NavLinkFragmentDataShape;
 }
 
 const Container = styled("nav", {
@@ -84,7 +84,7 @@ export const IsolatedLink = styled("div", {
 	},
 });
 
-export const NavigationWidget: FC<NavigationDataShape> = ({
+export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 	brand,
 	navLinksData,
 	isolatedLink,
@@ -108,8 +108,8 @@ export const NavigationWidget: FC<NavigationDataShape> = ({
 			<BrandLinksContainer>
 				<BrandContainer>
 					<ArcaneLink
-						name={brand}
-						url={"arcane"}
+						name={brand.name}
+						url={brand.url}
 						color={"black06"}
 						size={"body"}
 						weight={"medium"}

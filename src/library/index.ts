@@ -7,6 +7,6 @@ export { NavigationWidget } from "./widgets/NavigationWidget/NavigationWidget";
 export { CarouselContainer } from "./containers/CarouselContainer";
 
 export type {
-	NavLinksDataShape,
-	NavigationDataShape,
+	NavLinkFragmentDataShape,
+	NavigationWidgetDataShape,
 } from "./widgets/NavigationWidget/NavigationWidget";

@@ -2,12 +2,12 @@ import { FC } from "react";
 import { styled } from "../../utils/stitches/stitches.config";
 import { respxUtil } from "../../utils/stitches/respxUtil";
 import { ArcaneLink } from "../../atoms/ArcaneLink/ArcaneLink";
-import { NavLinksDataShape, IsolatedLink } from "./NavigationWidget";
+import { NavLinkFragmentDataShape, IsolatedLink } from "./NavigationWidget";
 
 interface NavigationLinksDataShape {
 	toggleState: boolean;
-	links: NavLinksDataShape[];
-	isolatedLink: NavLinksDataShape;
+	links: NavLinkFragmentDataShape[];
+	isolatedLink: NavLinkFragmentDataShape;
 }
 
 const LinksListFragment = styled("ul", {
