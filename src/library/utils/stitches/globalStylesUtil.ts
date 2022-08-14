@@ -1,6 +1,6 @@
 import { globalCss } from "./stitches.config";
 
-export const globalStyles = globalCss({
+export const globalStylesUtil = globalCss({
 	"@import": "../css/modernreset.css",
 	"*": {
 		margin: 0,

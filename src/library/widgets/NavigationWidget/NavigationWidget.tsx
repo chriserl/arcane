@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { NavigationLinks } from "./NavigationLinks";
+import { NavigationLinksFragment } from "./NavigationLinksFragment";
 import { styled } from "../../utils/stitches/stitches.config";
-import { respx } from "../../utils/stitches/respx";
+import { respxUtil } from "../../utils/stitches/respxUtil";
 import { Button, ButtonShape } from "../../atoms/Button/Button";
 import { ArcaneLink } from "../../atoms/ArcaneLink/ArcaneLink";
 import { useState } from "react";
@@ -21,7 +21,7 @@ const Container = styled("nav", {
 	width: "auto",
 	borderBottom: "1px solid $gray04",
 	backdropFilter: "blur(48px)",
-	padding: `${respx(12)} ${respx(16)}`,
+	padding: `${respxUtil(12)} ${respxUtil(16)}`,
 	flexContainer: {
 		direction: "row",
 		align: "center",
@@ -29,7 +29,7 @@ const Container = styled("nav", {
 	},
 
 	"@br640": {
-		padding: `${respx(8)} ${respx(24)}`,
+		padding: `${respxUtil(8)} ${respxUtil(24)}`,
 	},
 });
 
@@ -84,7 +84,7 @@ export const IsolatedLink = styled("div", {
 	},
 });
 
-export const Navigation: FC<NavigationDataShape> = ({
+export const NavigationWidget: FC<NavigationDataShape> = ({
 	brand,
 	navLinksData,
 	isolatedLink,
@@ -118,7 +118,7 @@ export const Navigation: FC<NavigationDataShape> = ({
 						<Button {...closeButtonData} />
 					</div>
 				</BrandContainer>
-				<NavigationLinks
+				<NavigationLinksFragment
 					toggleState={linksClosed}
 					links={navLinksData}
 					isolatedLink={isolatedLink}

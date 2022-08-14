@@ -1,13 +1,44 @@
 import React from "react";
-import { Navigation } from "./library/widgets/Navigation/Navigation";
-import { globalStyles } from "./library/utils/stitches/globalStyles";
+import {
+	NavigationWidget,
+	NavLinksDataShape,
+	NavigationDataShape,
+} from "./library/widgets/NavigationWidget/NavigationWidget";
+import { globalStylesUtil } from "./library/utils/stitches/globalStylesUtil";
+import "boxicons/css/boxicons.min.css";
+
+const navLinkObjects: NavLinksDataShape[] = [
+	{
+		name: "Gallery",
+		url: "/gallery",
+	},
+	{
+		name: "Bio",
+		url: "/bio",
+	},
+	{
+		name: "Gear",
+		url: "/gear",
+	},
+];
+
+const isolatedLink: NavLinksDataShape = {
+	name: "Contact",
+	url: "/contact",
+};
+
+const NavigationData: NavigationDataShape = {
+	brand: "Arcane",
+	navLinksData: navLinkObjects,
+	isolatedLink: isolatedLink,
+};
 
 function App() {
-	globalStyles();
+	globalStylesUtil();
 
 	return (
 		<div className="App">
-			<Navigation />
+			<NavigationWidget {...NavigationData} />
 		</div>
 	);
 }

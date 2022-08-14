@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { styled } from "../../utils/stitches/stitches.config";
-import { respx } from "../../utils/stitches/respx";
+import { respxUtil } from "../../utils/stitches/respxUtil";
 import { ArcaneLink } from "../../atoms/ArcaneLink/ArcaneLink";
-import { NavLinksDataShape, IsolatedLink } from "./Navigation";
+import { NavLinksDataShape, IsolatedLink } from "./NavigationWidget";
 
 interface NavigationLinksDataShape {
 	toggleState: boolean;
@@ -10,9 +10,9 @@ interface NavigationLinksDataShape {
 	isolatedLink: NavLinksDataShape;
 }
 
-const NavLinksList = styled("ul", {
+const LinksListFragment = styled("ul", {
 	width: "96%",
-	margin: `${respx(24)} auto ${respx(54)}`,
+	margin: `${respxUtil(24)} auto ${respxUtil(54)}`,
 	flexContainer: {
 		direction: "column",
 		align: "center",
@@ -23,7 +23,7 @@ const NavLinksList = styled("ul", {
 	},
 	a: {
 		width: "100%",
-		padding: `${respx(12)} 0`,
+		padding: `${respxUtil(12)} 0`,
 		color: "$black01",
 		textTransform: "capitalize",
 		borderBottom: "0.8px solid $gray04",
@@ -35,18 +35,18 @@ const NavLinksList = styled("ul", {
 
 	"@br640": {
 		margin: 0,
-		marginLeft: respx(70),
+		marginLeft: respxUtil(70),
 		flexContainer: {
 			direction: "row",
 			align: "center",
 			justify: "center",
 		},
 		li: {
-			margin: `0 ${respx(20)}`,
+			margin: `0 ${respxUtil(20)}`,
 		},
 		a: {
 			width: "maxContent",
-			padding: `${respx(2)}`,
+			padding: `${respxUtil(2)}`,
 			borderBottom: "none",
 		},
 	},
@@ -66,13 +66,13 @@ const NavLinksList = styled("ul", {
 	},
 });
 
-export const NavigationLinks: FC<NavigationLinksDataShape> = ({
+export const NavigationLinksFragment: FC<NavigationLinksDataShape> = ({
 	toggleState,
 	links,
 	isolatedLink,
 }) => {
 	return (
-		<NavLinksList toggle={toggleState ? "close" : "open"}>
+		<LinksListFragment toggle={toggleState ? "close" : "open"}>
 			{links.map((linkObject) => (
 				<li className="linkItem" key={linkObject.url}>
 					<ArcaneLink
@@ -92,6 +92,6 @@ export const NavigationLinks: FC<NavigationLinksDataShape> = ({
 					size="caption2"
 				/>
 			</IsolatedLink>
-		</NavLinksList>
+		</LinksListFragment>
 	);
 };

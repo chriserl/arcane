@@ -1,11 +1,12 @@
 export { styled } from "./utils/stitches/stitches.config";
-export { globalStyles } from "./utils/stitches/globalStyles";
-export { respx } from "./utils/stitches/respx";
+export { globalStylesUtil } from "./utils/stitches/globalStylesUtil";
+export { respxUtil } from "./utils/stitches/respxUtil";
 export { ArcaneLink } from "./atoms/ArcaneLink/ArcaneLink";
 export { Button } from "./atoms/Button/Button";
-export { Navigation } from "./widgets/Navigation/Navigation";
+export { NavigationWidget } from "./widgets/NavigationWidget/NavigationWidget";
+export { CarouselContainer } from "./containers/CarouselContainer";
 
 export type {
 	NavLinksDataShape,
 	NavigationDataShape,
-} from "./widgets/Navigation/Navigation";
+} from "./widgets/NavigationWidget/NavigationWidget";
