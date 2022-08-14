@@ -1,40 +1,21 @@
 import { FC } from "react";
+import { NavigationLinks } from "./NavigationLinks";
 import { styled } from "../../utils/stitches/stitches.config";
 import { respx } from "../../utils/stitches/respx";
 import { Button, ButtonShape } from "../../atoms/Button/Button";
-import { ArcaneLink, ArcaneLinkShape } from "../../atoms/ArcaneLink/ArcaneLink";
+import { ArcaneLink } from "../../atoms/ArcaneLink/ArcaneLink";
 import { useState } from "react";
 
-interface toggleDataShape {
-	toggleState: boolean;
+export interface NavLinksDataShape {
+	name: string;
+	url: string;
 }
 
-const navLinkObjects = [
-	{
-		name: "Messages",
-		url: "/messages",
-	},
-	{
-		name: "Messages",
-		url: "/messages",
-	},
-	{
-		name: "Messages",
-		url: "/messages",
-	},
-	{
-		name: "Messages",
-		url: "/messages",
-	},
-];
-
-const isolatedLinkData: ArcaneLinkShape = {
-	name: "Messages",
-	url: "/messages",
-	color: "primary",
-	weight: "normal",
-	size: "caption2",
-};
+export interface NavigationDataShape {
+	brand: string;
+	navLinksData: NavLinksDataShape[];
+	isolatedLink: NavLinksDataShape;
+}
 
 const Container = styled("nav", {
 	width: "auto",
@@ -49,62 +30,6 @@ const Container = styled("nav", {
 
 	"@br640": {
 		padding: `${respx(8)} ${respx(24)}`,
-	},
-});
-
-const NavLinksList = styled("ul", {
-	width: "96%",
-	margin: `${respx(24)} auto ${respx(54)}`,
-	flexContainer: {
-		direction: "column",
-		align: "center",
-		justify: "center",
-	},
-	li: {
-		width: "100%",
-	},
-	a: {
-		width: "100%",
-		padding: `${respx(12)} 0`,
-		color: "$black01",
-		textTransform: "capitalize",
-		borderBottom: "0.8px solid $gray04",
-
-		"&:hover": {
-			color: "$black06",
-		},
-	},
-
-	"@br640": {
-		margin: 0,
-		marginLeft: respx(70),
-		flexContainer: {
-			direction: "row",
-			align: "center",
-			justify: "center",
-		},
-		li: {
-			margin: `0 ${respx(20)}`,
-		},
-		a: {
-			width: "maxContent",
-			padding: `${respx(2)}`,
-			borderBottom: "none",
-		},
-	},
-
-	variants: {
-		toggle: {
-			close: {
-				display: "none",
-				"@br640": {
-					display: "flex",
-				},
-			},
-			open: {
-				display: "flex",
-			},
-		},
 	},
 });
 
@@ -136,7 +61,7 @@ const BrandContainer = styled("div", {
 	},
 });
 
-const IsolatedLink = styled("div", {
+export const IsolatedLink = styled("div", {
 	flexContainer: {
 		direction: "row",
 		align: "center",
@@ -159,29 +84,11 @@ const IsolatedLink = styled("div", {
 	},
 });
 
-const NavLinks: FC<toggleDataShape> = ({ toggleState }) => {
-	return (
-		<NavLinksList toggle={toggleState ? "close" : "open"}>
-			{navLinkObjects
-				.filter((linkObject) => linkObject.name !== "donate")
-				.map((linkObject) => (
-					<li className="linkItem" key={linkObject.name}>
-						<ArcaneLink
-							{...linkObject}
-							color={"black01"}
-							size={"caption2"}
-							weight={"normal"}
-						/>
-					</li>
-				))}
-			<IsolatedLink media="mobile">
-				<ArcaneLink {...isolatedLinkData} />
-			</IsolatedLink>
-		</NavLinksList>
-	);
-};
-
-export const Navigation: FC = () => {
+export const Navigation: FC<NavigationDataShape> = ({
+	brand,
+	navLinksData,
+	isolatedLink,
+}) => {
 	const [linksClosed, setlinksClosed] = useState(() => true);
 	const togglelinksClosed = () =>
 		setlinksClosed(() => (linksClosed ? false : true));
@@ -201,7 +108,7 @@ export const Navigation: FC = () => {
 			<BrandLinksContainer>
 				<BrandContainer>
 					<ArcaneLink
-						name={"Arcane"}
+						name={brand}
 						url={"arcane"}
 						color={"black06"}
 						size={"body"}
@@ -211,10 +118,20 @@ export const Navigation: FC = () => {
 						<Button {...closeButtonData} />
 					</div>
 				</BrandContainer>
-				<NavLinks toggleState={linksClosed} />
+				<NavigationLinks
+					toggleState={linksClosed}
+					links={navLinksData}
+					isolatedLink={isolatedLink}
+				/>
 			</BrandLinksContainer>
 			<IsolatedLink media="tab">
-				<ArcaneLink {...isolatedLinkData} />
+				<ArcaneLink
+					name={isolatedLink.name}
+					url={isolatedLink.url}
+					color="primary"
+					weight="normal"
+					size="caption2"
+				/>
 			</IsolatedLink>
 		</Container>
 	);
