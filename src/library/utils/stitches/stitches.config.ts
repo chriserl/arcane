@@ -1,4 +1,5 @@
 import { createStitches } from "@stitches/react";
+import { respxUtil } from "./respxUtil";
 
 export const { styled, globalCss } = createStitches({
 	theme: {
@@ -41,6 +42,9 @@ export const { styled, globalCss } = createStitches({
 			caption3: "calc((1.04rem / 16) * 13)",
 		},
 		fontWeights: { medium: 500, semiBold: 600, bold: 700 },
+		shadows: {
+			shOne: `0 ${respxUtil(16)} ${respxUtil(40)} ${respxUtil(4)} #c7c7cc`,
+		},
 	},
 	media: {
 		br414: "(min-width: 414px)",

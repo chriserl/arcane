@@ -5,6 +5,7 @@ import {
 	NavigationWidgetDataShape,
 } from "./library/widgets/NavigationWidget/NavigationWidget";
 import { globalStylesUtil } from "./library/utils/stitches/globalStylesUtil";
+import { styled } from "./library/utils/stitches/stitches.config";
 import "boxicons/css/boxicons.min.css";
 
 const navLinkObjects: NavLinkFragmentDataShape[] = [
@@ -33,12 +34,33 @@ const NavigationData: NavigationWidgetDataShape = {
 	isolatedLink: isolatedLink,
 };
 
+const Main = styled("main", {
+	width: "100^",
+	height: "72vh",
+	flexContainer: {
+		direction: "row",
+		align: "center",
+		justify: "center",
+	},
+});
+
+const SmallBox = styled("div", {
+	width: "100px",
+	height: "100px",
+	borderRadius: "4px",
+	background: "$black02",
+	boxShadow: "$shOne",
+});
+
 function App() {
 	globalStylesUtil();
 
 	return (
 		<div className="App">
 			<NavigationWidget {...NavigationData} />
+			<Main>
+				<SmallBox />
+			</Main>
 		</div>
 	);
 }
