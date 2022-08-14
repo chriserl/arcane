@@ -21,7 +21,12 @@
 		"@types/node": "^16.7.13",
 		"@types/react": "^18.0.0",
 		"@types/react-dom": "^18.0.0",
-		"typescript": "^4.4.2"
+		"react-scripts": "^5.0.1",
+		"typescript": "^4.4.2",
+		"@stitches/react": "^1.2.8",
+		"boxicons": "^2.1.2",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
 	},
 	"scripts": {
 		"build": "rollup -c",
@@ -55,6 +60,7 @@
 	},
 	"peerDependencies": {
 		"@stitches/react": "^1.2.8",
+		"boxicons": "^2.1.2",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-scripts": "5.0.1"
