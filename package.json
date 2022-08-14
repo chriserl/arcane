@@ -1,7 +1,7 @@
 {
 	"name": "@chriserl/arcane",
 	"description": "Arcane UI Library by Montara Studio",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"type": "module",
@@ -60,7 +60,6 @@
 	"peerDependencies": {
 		"@stitches/react": "^1.2.8",
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"react-scripts": "5.0.1"
+		"react-dom": "^18.2.0"
 	}
 }
