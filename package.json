@@ -18,15 +18,15 @@
 		"url": "https://github.com/chriserl/arcane/issues"
 	},
 	"dependencies": {
+		"@stitches/react": "^1.2.8",
 		"@types/node": "^16.7.13",
 		"@types/react": "^18.0.0",
 		"@types/react-dom": "^18.0.0",
-		"react-scripts": "^5.0.1",
-		"typescript": "^4.4.2",
-		"@stitches/react": "^1.2.8",
 		"boxicons": "^2.1.2",
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react-dom": "^18.2.0",
+		"react-scripts": "^5.0.1",
+		"typescript": "^4.4.2"
 	},
 	"scripts": {
 		"build": "rollup -c",
@@ -51,7 +51,6 @@
 		]
 	},
 	"devDependencies": {
-		"@rollup/plugin-node-resolve": "^13.3.0",
 		"@rollup/plugin-typescript": "^8.3.4",
 		"rollup": "^2.77.3",
 		"rollup-plugin-babel": "^4.4.0",

@@ -19,6 +19,7 @@ const config = [
 			"react-router",
 			"react/jsx-runtime",
 			"@stitches/react",
+			"boxicons",
 		],
 		plugins: [
 			babel({
