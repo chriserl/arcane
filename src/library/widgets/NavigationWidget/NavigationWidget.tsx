@@ -19,9 +19,8 @@ export interface NavigationWidgetDataShape {
 
 const Container = styled("nav", {
 	width: "auto",
-	borderBottom: "1px solid $gray04",
+	backgroundColor: "$gray01",
 	backdropFilter: "blur(48px)",
-	padding: `${respxUtil(12)} ${respxUtil(16)}`,
 	flexContainer: {
 		direction: "row",
 		align: "center",
@@ -29,14 +28,23 @@ const Container = styled("nav", {
 	},
 
 	"@br640": {
-		padding: `${respxUtil(8)} ${respxUtil(24)}`,
+		borderBottom: "1px solid $gray04",
+		padding: `${respxUtil(8)} ${respxUtil(48)}`,
 	},
 });
 
 const BrandLinksContainer = styled("div", {
 	width: "100%",
+	backgroundColor: "$gray01",
+	position: "absolute",
+	top: "0",
+	left: "0",
+	borderBottom: "1px solid $gray04",
+
 	"@br640": {
 		width: "max-content",
+		position: "static",
+		borderBottom: "none",
 		flexContainer: {
 			direction: "row",
 			align: "center",
@@ -46,6 +54,8 @@ const BrandLinksContainer = styled("div", {
 });
 
 const BrandContainer = styled("div", {
+	padding: `${respxUtil(12)} ${respxUtil(16)}`,
+
 	flexContainer: {
 		direction: "row",
 		align: "center",
@@ -58,6 +68,10 @@ const BrandContainer = styled("div", {
 				display: "none",
 			},
 		},
+	},
+
+	"@br640": {
+		padding: "0",
 	},
 });
 

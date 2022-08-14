@@ -11,8 +11,7 @@ interface NavigationLinksDataShape {
 }
 
 const LinksListFragment = styled("ul", {
-	width: "96%",
-	margin: `${respxUtil(24)} auto ${respxUtil(54)}`,
+	padding: `${respxUtil(24)} ${respxUtil(24)} ${respxUtil(72)}`,
 	flexContainer: {
 		direction: "column",
 		align: "center",
@@ -36,6 +35,8 @@ const LinksListFragment = styled("ul", {
 	"@br640": {
 		margin: 0,
 		marginLeft: respxUtil(70),
+		padding: "0",
+
 		flexContainer: {
 			direction: "row",
 			align: "center",
