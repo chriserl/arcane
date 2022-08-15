@@ -19,6 +19,8 @@ export interface NavigationWidgetDataShape {
 
 const Container = styled("nav", {
 	width: "auto",
+	position:'relative',
+	zIndex:'999',
 	backdropFilter: "blur(48px)",
 	flexContainer: {
 		direction: "row",
