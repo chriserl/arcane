@@ -36,6 +36,7 @@ const LinksListFragment = styled("ul", {
 		margin: 0,
 		marginLeft: respxUtil(70),
 		padding: "0",
+		borderBottom: "none",
 		flexContainer: {
 			direction: "row",
 			align: "center",
@@ -87,6 +88,7 @@ const LinksListItem = styled("li", {
 
 	"@br640": {
 		margin: `0 ${respxUtil(20)}`,
+		borderBottom: "none",
 		"&:first-child": {
 			marginTop: "0",
 		},
