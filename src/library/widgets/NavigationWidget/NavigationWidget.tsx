@@ -37,6 +37,7 @@ const BrandLinksContainer = styled("div", {
 	width: "100%",
 	position: "relative",
 	top: "0",
+	zIndex:'999',
 	backgroundColor: "$gray02",
 	borderBottom: "1px solid $gray04",
 
