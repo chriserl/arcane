@@ -35,10 +35,9 @@ const Container = styled("nav", {
 
 const BrandLinksContainer = styled("div", {
 	width: "100%",
-	backgroundColor: "$gray01",
-	position: "absolute",
+	position: "relative",
 	top: "0",
-	left: "0",
+	backgroundColor: "$gray01",
 	borderBottom: "1px solid $gray04",
 
 	"@br640": {
@@ -75,7 +74,7 @@ const BrandContainer = styled("div", {
 	},
 });
 
-export const IsolatedLink = styled("div", {
+export const IsolatedLink = styled("li", {
 	flexContainer: {
 		direction: "row",
 		align: "center",
@@ -87,6 +86,7 @@ export const IsolatedLink = styled("div", {
 			mobile: {
 				display: "flex",
 				width: "100%",
+				margin: `${respxUtil(12)} 0`,
 				a: { color: "$primary", borderBottom: "none" },
 				"@br640": { display: "none" },
 			},
