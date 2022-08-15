@@ -35,7 +35,7 @@ const LinksListFragment = styled("ul", {
 		width: "max-content",
 		position: "static",
 		margin: 0,
-		marginLeft: respxUtil(70),
+		marginLeft: respxUtil(64),
 		padding: "0",
 		borderBottom: "none",
 		flexContainer: {
