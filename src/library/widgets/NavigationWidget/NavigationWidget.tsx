@@ -19,7 +19,6 @@ export interface NavigationWidgetDataShape {
 
 const Container = styled("nav", {
 	width: "auto",
-	backgroundColor: "$gray01",
 	backdropFilter: "blur(48px)",
 	flexContainer: {
 		direction: "row",
@@ -28,6 +27,7 @@ const Container = styled("nav", {
 	},
 
 	"@br640": {
+		backgroundColor: "$gray02",
 		borderBottom: "1px solid $gray04",
 		padding: `${respxUtil(8)} ${respxUtil(48)}`,
 	},
@@ -37,7 +37,7 @@ const BrandLinksContainer = styled("div", {
 	width: "100%",
 	position: "relative",
 	top: "0",
-	backgroundColor: "$gray01",
+	backgroundColor: "$gray02",
 	borderBottom: "1px solid $gray04",
 
 	"@br640": {
