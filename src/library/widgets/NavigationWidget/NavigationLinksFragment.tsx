@@ -14,6 +14,7 @@ const LinksListFragment = styled("ul", {
 	width: "100%",
 	position: "absolute",
 	left: "0",
+	zIndex: "2",
 	background: "$gray02",
 	paddingBottom: `${respxUtil(64)}`,
 	borderBottom: "0.8px solid $gray04",
