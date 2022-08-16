@@ -7,6 +7,7 @@ export { NavigationWidget } from "./widgets/NavigationWidget/NavigationWidget";
 export { CarouselContainer } from "./containers/CarouselContainer";
 export { Footer } from "./widgets/Footer/Footer";
 
+export type { ArcaneLinkShape } from "./atoms/ArcaneLink/ArcaneLink";
 export type {
 	NavLinkFragmentDataShape,
 	NavigationWidgetDataShape,

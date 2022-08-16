@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { respxUtil } from "../../utils/stitches/respxUtil";
 import { styled } from "../../utils/stitches/stitches.config";
 
 export interface ArcaneLinkShape {
@@ -7,9 +8,15 @@ export interface ArcaneLinkShape {
 	size: "caption3" | "caption2" | "body";
 	weight: "normal" | "medium";
 	color: "primary" | "black01" | "black06";
+	icon?: { class: string; position: "left" | "right" };
 }
 
 const Container = styled("div", {
+	flexContainer: {
+		direction: "row",
+		align: "center",
+		justify: "center",
+	},
 	variants: {
 		color: {
 			primary: {
@@ -41,6 +48,12 @@ const Container = styled("div", {
 				fontWeight: "$medium",
 			},
 		},
+		iconPosition: {
+			left: {
+				flexDirection: "row-reverse",
+			},
+			right: {},
+		},
 	},
 });
 
@@ -50,10 +63,17 @@ export const ArcaneLink: FC<ArcaneLinkShape> = ({
 	size,
 	weight,
 	color,
+	icon,
 }) => {
 	return (
-		<Container color={color} size={size} weight={weight}>
-			<a href={url}>{name}</a>
+		<Container
+			color={color}
+			size={size}
+			weight={weight}
+			iconPosition={icon ? icon.position : "right"}
+		>
+			{icon && <i className={icon.class} id="linkIcon"></i>}
+			<a href={url}>{name} </a>
 		</Container>
 	);
 };
