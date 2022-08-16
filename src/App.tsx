@@ -7,6 +7,7 @@ import {
 import { globalStylesUtil } from "./library/utils/stitches/globalStylesUtil";
 import { styled } from "./library/utils/stitches/stitches.config";
 import "boxicons/css/boxicons.min.css";
+import { Footer, FooterDataShape } from "./library/widgets/Footer/Footer";
 
 const navLinkObjects: NavLinkFragmentDataShape[] = [
 	{
@@ -52,6 +53,40 @@ const SmallBox = styled("div", {
 	boxShadow: "$shOne",
 });
 
+const footerData: FooterDataShape = {
+	linkSets: [
+		{
+			title: "Montara",
+			links: [
+				{ name: "America", url: "/" },
+				{ name: "Great Britain", url: "/" },
+				{ name: "Canada", url: "/" },
+				{ name: "Switzerland", url: "/" },
+				{ name: "France", url: "/" },
+			],
+		},
+		{
+			title: "Montara",
+			links: [
+				{ name: "America", url: "/" },
+				{ name: "Great Britain", url: "/" },
+				{ name: "Canada", url: "/" },
+				{ name: "Switzerland", url: "/" },
+			],
+		},
+		{
+			title: "Florida",
+			links: [
+				{ name: "America", url: "/" },
+				{ name: "Great Britain", url: "/" },
+				{ name: "Canada", url: "/" },
+				{ name: "Switzerland", url: "/" },
+			],
+		},
+	],
+	copyright: "Montara Studio 2022",
+};
+
 function App() {
 	globalStylesUtil();
 
@@ -61,6 +96,7 @@ function App() {
 			<Main>
 				<SmallBox />
 			</Main>
+			<Footer {...footerData} />
 		</div>
 	);
 }

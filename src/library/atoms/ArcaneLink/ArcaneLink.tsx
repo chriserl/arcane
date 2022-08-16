@@ -4,7 +4,7 @@ import { styled } from "../../utils/stitches/stitches.config";
 export interface ArcaneLinkShape {
 	name: string;
 	url: string;
-	size: "caption2" | "body";
+	size: "caption3" | "caption2" | "body";
 	weight: "normal" | "medium";
 	color: "primary" | "black01" | "black06";
 }
@@ -23,6 +23,9 @@ const Container = styled("div", {
 			},
 		},
 		size: {
+			caption3: {
+				fontSize: "$caption3",
+			},
 			caption2: {
 				fontSize: "$caption2",
 			},
