@@ -66,6 +66,7 @@ const LinksContainer = styled("div", {
 		align: "start",
 		justify: "start",
 	},
+	justifyItems: "start",
 	gridColumn: "1fr",
 	gridRowGap: respxUtil(14),
 });
