@@ -77,7 +77,7 @@ const CopyrightContainer = styled("p", {
 	color: "$black01",
 });
 
-export const Footer: FC<FooterDataShape> = ({ linkSets, copyright }) => {
+export const FooterWidget: FC<FooterDataShape> = ({ linkSets, copyright }) => {
 	return (
 		<Container>
 			<FooterWrapper>

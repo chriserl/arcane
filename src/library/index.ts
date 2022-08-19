@@ -5,11 +5,11 @@ export { ArcaneLink } from "./atoms/ArcaneLink/ArcaneLink";
 export { Button } from "./atoms/Button/Button";
 export { NavigationWidget } from "./widgets/NavigationWidget/NavigationWidget";
 export { CarouselContainer } from "./containers/CarouselContainer";
-export { Footer } from "./widgets/Footer/Footer";
+export { FooterWidget } from "./widgets/FooterWidget/FooterWidget";
 
 export type { ArcaneLinkShape } from "./atoms/ArcaneLink/ArcaneLink";
 export type {
 	NavLinkFragmentDataShape,
 	NavigationWidgetDataShape,
 } from "./widgets/NavigationWidget/NavigationWidget";
-export type { FooterDataShape } from "./widgets/Footer/Footer";
+export type { FooterDataShape } from "./widgets/FooterWidget/FooterWidget";
