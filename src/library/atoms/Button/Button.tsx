@@ -5,11 +5,12 @@ export interface ButtonShape {
 	type: "text" | "icon" | "textIcon";
 	color: "primary" | "black01" | "black06";
 	size: "caption2" | "body";
+	text?: string;
+	iconPosition?: "left" | "right";
 	icon?: {
 		name: string;
 		weight: "normal" | "solid";
 	};
-	text?: string;
 	clickFunction?: VoidFunction;
 }
 
@@ -36,9 +37,20 @@ const Container = styled("button", {
 					display: "none",
 				},
 			},
-			textIcon: {},
+			textIcon: {
+				"i +	p": {
+					display: "inline",
+				},
+			},
 		},
-
+		iconPosition: {
+			left: {
+				flexDirection: "row",
+			},
+			right: {
+				flexDirection: "row-reverse",
+			},
+		},
 		color: {
 			primary: {
 				color: "$primary",
@@ -66,6 +78,7 @@ export const Button: FC<ButtonShape> = ({
 	color,
 	size,
 	icon,
+	iconPosition,
 	text,
 	clickFunction,
 }) => {
@@ -74,6 +87,7 @@ export const Button: FC<ButtonShape> = ({
 			type={type}
 			color={color}
 			size={size}
+			iconPosition={iconPosition}
 			onClick={() => clickFunction && clickFunction()}
 		>
 			{icon && (
