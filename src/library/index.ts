@@ -8,6 +8,7 @@ export { CarouselContainer } from "./containers/CarouselContainer";
 export { FooterWidget } from "./widgets/FooterWidget/FooterWidget";
 
 export type { ArcaneLinkShape } from "./atoms/ArcaneLink/ArcaneLink";
+export type { ButtonShape } from "./atoms/Button/Button";
 export type {
 	NavLinkFragmentDataShape,
 	NavigationWidgetDataShape,

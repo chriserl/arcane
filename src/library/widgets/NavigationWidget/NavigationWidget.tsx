@@ -19,8 +19,8 @@ export interface NavigationWidgetDataShape {
 
 const Container = styled("nav", {
 	width: "auto",
-	position:'relative',
-	zIndex:'999',
+	position: "relative",
+	zIndex: "999",
 	backdropFilter: "blur(48px)",
 	flexContainer: {
 		direction: "row",
@@ -39,7 +39,7 @@ const BrandLinksContainer = styled("div", {
 	width: "100%",
 	position: "relative",
 	top: "0",
-	zIndex:'999',
+	zIndex: "999",
 	backgroundColor: "$gray02",
 	borderBottom: "1px solid $gray04",
 
@@ -110,7 +110,7 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 	const togglelinksClosed = () =>
 		setlinksClosed(() => (linksClosed ? false : true));
 	const closeButtonData: ButtonShape = {
-		content: "icon",
+		type: "icon",
 		color: "black06",
 		icon: {
 			name: `${linksClosed ? "dots-vertical-rounded" : "x"}`,

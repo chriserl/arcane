@@ -2,7 +2,7 @@ import { FC } from "react";
 import { styled } from "../../utils/stitches/stitches.config";
 
 export interface ButtonShape {
-	content: "icon";
+	type: "text" | "icon" | "textIcon";
 	color: "primary" | "black01" | "black06";
 	size: "caption2" | "body";
 	icon?: {
@@ -24,15 +24,21 @@ const Container = styled("button", {
 	background: "transparent",
 	lineHeight: "1",
 	cursor: "pointer",
-
 	variants: {
-		content: {
-			icon: {
-				"&.text": {
+		type: {
+			text: {
+				i: {
 					display: "none",
 				},
 			},
+			icon: {
+				p: {
+					display: "none",
+				},
+			},
+			textIcon: {},
 		},
+
 		color: {
 			primary: {
 				color: "$primary",
@@ -56,7 +62,7 @@ const Container = styled("button", {
 });
 
 export const Button: FC<ButtonShape> = ({
-	content,
+	type,
 	color,
 	size,
 	icon,
@@ -65,7 +71,7 @@ export const Button: FC<ButtonShape> = ({
 }) => {
 	return (
 		<Container
-			content={content}
+			type={type}
 			color={color}
 			size={size}
 			onClick={() => clickFunction && clickFunction()}
