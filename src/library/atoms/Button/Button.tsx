@@ -3,7 +3,7 @@ import { styled } from "../../utils/stitches/stitches.config";
 
 export interface ButtonShape {
 	type: "text" | "icon" | "textIcon";
-	color: "primary" | "black01" | "black06";
+	color: "primary" | "gray00" | "black01" | "black06";
 	size: "caption2" | "body";
 	text?: string;
 	iconPosition?: "left" | "right";
@@ -54,6 +54,9 @@ const Container = styled("button", {
 		color: {
 			primary: {
 				color: "$primary",
+			},
+			gray00: {
+				color: "$gray00",
 			},
 			black01: {
 				color: "$black01",

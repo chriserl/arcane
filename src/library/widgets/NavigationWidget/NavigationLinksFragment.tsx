@@ -5,6 +5,7 @@ import { ArcaneLink } from "../../atoms/ArcaneLink/ArcaneLink";
 import { NavLinkFragmentDataShape, IsolatedLink } from "./NavigationWidget";
 
 interface NavigationLinksDataShape {
+	theme: "light" | "dark";
 	toggleState: boolean;
 	links: NavLinkFragmentDataShape[];
 	isolatedLink: NavLinkFragmentDataShape;
@@ -17,7 +18,6 @@ const LinksListFragment = styled("ul", {
 	zIndex: "999",
 	background: "$gray02",
 	paddingBottom: `${respxUtil(64)}`,
-	borderBottom: "0.8px solid $gray04",
 	flexContainer: {
 		direction: "column",
 		align: "flexStart",
@@ -29,29 +29,6 @@ const LinksListFragment = styled("ul", {
 		position: "relative",
 		left: respxUtil(28),
 		right: respxUtil(28),
-	},
-
-	"@br640": {
-		width: "max-content",
-		position: "static",
-		margin: 0,
-		marginLeft: respxUtil(64),
-		padding: "0",
-		borderBottom: "none",
-		flexContainer: {
-			direction: "row",
-			align: "center",
-			justify: "center",
-		},
-		li: {
-			width: "max-content",
-			margin: `0 ${respxUtil(20)}`,
-		},
-		a: {
-			width: "max-content",
-			padding: `${respxUtil(2)}`,
-			borderBottom: "none",
-		},
 	},
 
 	variants: {
@@ -66,11 +43,61 @@ const LinksListFragment = styled("ul", {
 				display: "flex",
 			},
 		},
+		theme: {
+			light: {
+				background: "$gray02",
+				borderBottom: "0.8px solid $gray04",
+				"@br640": {
+					borderBottom: "none",
+				},
+				a: {
+					color: "$black01",
+
+					"&:hover": {
+						color: "$black06",
+					},
+				},
+			},
+			dark: {
+				background: "$black06",
+				borderBottom: "0.8px solid $black04",
+				"@br640": {
+					borderBottom: "none",
+				},
+				a: {
+					color: "$gray04",
+
+					"&:hover": {
+						color: "$gray01",
+					},
+				},
+			},
+		},
+	},
+
+	"@br640": {
+		width: "max-content",
+		position: "static",
+		margin: 0,
+		marginLeft: respxUtil(64),
+		padding: "0",
+		flexContainer: {
+			direction: "row",
+			align: "center",
+			justify: "center",
+		},
+		li: {
+			width: "max-content",
+			margin: `0 ${respxUtil(20)}`,
+		},
+		a: {
+			width: "max-content",
+			padding: `${respxUtil(2)}`,
+		},
 	},
 });
 
 const LinksListItem = styled("li", {
-	borderBottom: "0.8px solid $gray04",
 	margin: `${respxUtil(10)} 0`,
 	"&:first-child": {
 		marginTop: `${respxUtil(32)}`,
@@ -78,18 +105,29 @@ const LinksListItem = styled("li", {
 
 	a: {
 		width: "100%",
-		color: "$black01",
 		textTransform: "capitalize",
 		padding: `${respxUtil(4)} 0`,
+	},
 
-		"&:hover": {
-			color: "$black06",
+	variants: {
+		theme: {
+			light: {
+				borderBottom: "0.8px solid $gray04",
+				"@br640": {
+					borderBottom: "none",
+				},
+			},
+			dark: {
+				borderBottom: "0.8px solid $black05",
+				"@br640": {
+					borderBottom: "none",
+				},
+			},
 		},
 	},
 
 	"@br640": {
 		margin: `0 ${respxUtil(20)}`,
-		borderBottom: "none",
 		"&:first-child": {
 			marginTop: "0",
 		},
@@ -97,19 +135,20 @@ const LinksListItem = styled("li", {
 });
 
 export const NavigationLinksFragment: FC<NavigationLinksDataShape> = ({
+	theme,
 	toggleState,
 	links,
 	isolatedLink,
 }) => {
 	return (
-		<LinksListFragment toggle={toggleState ? "close" : "open"}>
+		<LinksListFragment toggle={toggleState ? "close" : "open"} theme={theme}>
 			{links.map((linkObject) => (
-				<LinksListItem key={linkObject.url}>
+				<LinksListItem key={linkObject.url} theme={theme}>
 					<ArcaneLink
 						{...linkObject}
 						color={"black01"}
-						size={"caption2"}
-						weight={"normal"}
+						fontSize={"caption2"}
+						fontWeight={"normal"}
 					/>
 				</LinksListItem>
 			))}
@@ -118,8 +157,8 @@ export const NavigationLinksFragment: FC<NavigationLinksDataShape> = ({
 					name={isolatedLink.name}
 					url={isolatedLink.url}
 					color="primary"
-					weight="normal"
-					size="caption2"
+					fontWeight="normal"
+					fontSize="caption2"
 				/>
 			</IsolatedLink>
 		</LinksListFragment>

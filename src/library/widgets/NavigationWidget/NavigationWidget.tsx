@@ -12,6 +12,7 @@ export interface NavLinkFragmentDataShape {
 }
 
 export interface NavigationWidgetDataShape {
+	theme: "light" | "dark";
 	brand: NavLinkFragmentDataShape;
 	navLinksData: NavLinkFragmentDataShape[];
 	isolatedLink: NavLinkFragmentDataShape;
@@ -29,9 +30,20 @@ const Container = styled("nav", {
 	},
 
 	"@br640": {
-		backgroundColor: "$gray02",
-		borderBottom: "1px solid $gray04",
 		padding: `${respxUtil(8)} ${respxUtil(48)}`,
+	},
+
+	variants: {
+		theme: {
+			light: {
+				backgroundColor: "$gray02",
+				borderBottom: "1px solid $gray04",
+			},
+			dark: {
+				backgroundColor: "$black06",
+				borderBottom: "1px solid $black04",
+			},
+		},
 	},
 });
 
@@ -40,8 +52,17 @@ const BrandLinksContainer = styled("div", {
 	position: "relative",
 	top: "0",
 	zIndex: "999",
-	backgroundColor: "$gray02",
-	borderBottom: "1px solid $gray04",
+
+	variants: {
+		theme: {
+			light: {
+				backgroundColor: "$gray02",
+			},
+			dark: {
+				backgroundColor: "$black06",
+			},
+		},
+	},
 
 	"@br640": {
 		width: "max-content",
@@ -75,9 +96,33 @@ const BrandContainer = styled("div", {
 	"@br640": {
 		padding: "0",
 	},
+
+	variants: {
+		theme: {
+			light: {
+				a: {
+					color: "$black01",
+
+					"&:hover": {
+						color: "$black02",
+					},
+				},
+			},
+			dark: {
+				a: {
+					color: "$gray00",
+
+					"&:hover": {
+						color: "$gray01",
+					},
+				},
+			},
+		},
+	},
 });
 
 export const IsolatedLink = styled("li", {
+	color: "$primary",
 	flexContainer: {
 		direction: "row",
 		align: "center",
@@ -102,6 +147,7 @@ export const IsolatedLink = styled("li", {
 });
 
 export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
+	theme,
 	brand,
 	navLinksData,
 	isolatedLink,
@@ -111,7 +157,7 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 		setlinksClosed(() => (linksClosed ? false : true));
 	const closeButtonData: ButtonShape = {
 		type: "icon",
-		color: "black06",
+		color: `${theme === "light" ? "black06" : "gray00"}`,
 		icon: {
 			name: `${linksClosed ? "dots-vertical-rounded" : "x"}`,
 			weight: "normal",
@@ -121,21 +167,22 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 	};
 
 	return (
-		<Container>
-			<BrandLinksContainer>
-				<BrandContainer>
+		<Container theme={theme}>
+			<BrandLinksContainer theme={theme}>
+				<BrandContainer theme={theme}>
 					<ArcaneLink
 						name={brand.name}
 						url={brand.url}
-						color={"black06"}
-						size={"body"}
-						weight={"medium"}
+						color={"$gray00"}
+						fontSize={"$body"}
+						fontWeight={"medium"}
 					/>
 					<div className="closeButton">
 						<Button {...closeButtonData} />
 					</div>
 				</BrandContainer>
 				<NavigationLinksFragment
+					theme={theme}
 					toggleState={linksClosed}
 					links={navLinksData}
 					isolatedLink={isolatedLink}
@@ -146,8 +193,8 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 					name={isolatedLink.name}
 					url={isolatedLink.url}
 					color="primary"
-					weight="normal"
-					size="caption2"
+					fontWeight="normal"
+					fontSize="caption2"
 				/>
 			</IsolatedLink>
 		</Container>
