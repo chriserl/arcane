@@ -101,7 +101,7 @@ const BrandContainer = styled("div", {
 		theme: {
 			light: {
 				a: {
-					color: "$black01",
+					color: "$black06",
 
 					"&:hover": {
 						color: "$black02",
@@ -173,9 +173,9 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 					<ArcaneLink
 						name={brand.name}
 						url={brand.url}
-						color={"$gray00"}
-						fontSize={"$body"}
-						fontWeight={"medium"}
+						color="$gray00"
+						fontSize="$body"
+						fontWeight="medium"
 					/>
 					<div className="closeButton">
 						<Button {...closeButtonData} />
