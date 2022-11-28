@@ -91,7 +91,7 @@ export const FooterWidget: FC<FooterDataShape> = ({ linkSets, copyright }) => {
 										fontWeight="normal"
 										key={link.name}
 										fontSize="caption3"
-										color="black01"
+										color="$black02"
 										{...link}
 									/>
 								))}

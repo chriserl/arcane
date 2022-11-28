@@ -7,7 +7,23 @@ import {
 import { globalStylesUtil } from "./library/utils/stitches/globalStylesUtil";
 import { styled } from "./library/utils/stitches/stitches.config";
 import "boxicons/css/boxicons.min.css";
-import { Footer, FooterDataShape } from "./library/widgets/Footer/Footer";
+import {
+	FooterWidget,
+	FooterDataShape,
+} from "./library/widgets/FooterWidget/FooterWidget";
+import { Button, ButtonShape } from "./library/atoms/Button/Button";
+
+const buttonData: ButtonShape = {
+	type: "textIcon",
+	color: "primary",
+	size: "body",
+	text: "Wien",
+	iconPosition: "left",
+	icon: {
+		name: "bookmark",
+		weight: "normal",
+	},
+};
 
 const navLinkObjects: NavLinkFragmentDataShape[] = [
 	{
@@ -30,6 +46,7 @@ const isolatedLink: NavLinkFragmentDataShape = {
 };
 
 const NavigationData: NavigationWidgetDataShape = {
+	theme: "light",
 	brand: { name: "Arcane", url: "/" },
 	navLinksData: navLinkObjects,
 	isolatedLink: isolatedLink,
@@ -38,6 +55,7 @@ const NavigationData: NavigationWidgetDataShape = {
 const Main = styled("main", {
 	width: "100^",
 	height: "72vh",
+	backgroundColor: "$gray02",
 	flexContainer: {
 		direction: "row",
 		align: "center",
@@ -95,8 +113,9 @@ function App() {
 			<NavigationWidget {...NavigationData} />
 			<Main>
 				<SmallBox />
+				<Button {...buttonData} />
 			</Main>
-			<Footer {...footerData} />
+			<FooterWidget {...footerData} />
 		</div>
 	);
 }

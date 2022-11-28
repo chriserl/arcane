@@ -36,7 +36,7 @@ export const ArcaneLink: FC<ArcaneLinkShape> = ({
 }) => {
 	return (
 		<Container
-			css={{ foreColor: color, fontSize, fontWeight }}
+			css={{ color, fontSize, fontWeight }}
 			iconPosition={icon ? icon.position : "right"}
 		>
 			{icon && <i className={icon.class} id="linkIcon"></i>}
