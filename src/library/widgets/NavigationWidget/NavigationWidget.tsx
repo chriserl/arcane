@@ -175,7 +175,7 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 						url={brand.url}
 						color="$gray00"
 						fontSize="$body"
-						fontWeight="medium"
+						fontWeight="$medium"
 					/>
 					<div className="closeButton">
 						<Button {...closeButtonData} />

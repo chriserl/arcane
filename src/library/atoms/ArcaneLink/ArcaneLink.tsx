@@ -26,6 +26,8 @@ const Container = styled("div", {
 	},
 });
 
+const Anchor = styled("a", {});
+
 export const ArcaneLink: FC<ArcaneLinkShape> = ({
 	name,
 	url,
@@ -36,11 +38,13 @@ export const ArcaneLink: FC<ArcaneLinkShape> = ({
 }) => {
 	return (
 		<Container
-			css={{ color, fontSize, fontWeight }}
+			css={{ color, fontSize }}
 			iconPosition={icon ? icon.position : "right"}
 		>
 			{icon && <i className={icon.class} id="linkIcon"></i>}
-			<a href={url}>{name} </a>
+			<Anchor css={{ fontWeight }} href={url}>
+				{name}
+			</Anchor>
 		</Container>
 	);
 };
