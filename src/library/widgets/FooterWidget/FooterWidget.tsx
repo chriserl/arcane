@@ -19,7 +19,7 @@ const Container = styled("footer", {
 	position: "relative",
 	bottom: "0",
 	left: "0",
-	backgroundColor: "$gray03",
+	backgroundColor: "$gray02",
 	marginTop: respxUtil(112),
 });
 
@@ -55,7 +55,7 @@ const LinkSetContainer = styled("div", {
 });
 
 const LinkSetTitle = styled("p", {
-	fontSize: "$caption3",
+	fontSize: "$caption2",
 	fontWeight: "$medium",
 	color: "$black06",
 	marginBottom: respxUtil(18),
@@ -74,7 +74,7 @@ const LinksContainer = styled("div", {
 const CopyrightContainer = styled("p", {
 	textAlign: "center",
 	fontSize: "$caption3",
-	color: "$black01",
+	color: "$gray06",
 });
 
 export const FooterWidget: FC<FooterDataShape> = ({ linkSets, copyright }) => {
@@ -91,7 +91,7 @@ export const FooterWidget: FC<FooterDataShape> = ({ linkSets, copyright }) => {
 										fontWeight="normal"
 										key={link.name}
 										fontSize="caption3"
-										color="$black02"
+										color="$black01"
 										{...link}
 									/>
 								))}
