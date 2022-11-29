@@ -11,6 +11,7 @@ export interface ArcaneLinkShape {
 }
 
 const Container = styled("div", {
+	width: "max-content",
 	flexContainer: {
 		direction: "row",
 		align: "center",
