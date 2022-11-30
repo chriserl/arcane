@@ -55,7 +55,7 @@ const LinkSetContainer = styled("div", {
 });
 
 const LinkSetTitle = styled("p", {
-	fontSize: "$caption2",
+	fontSize: "$caption3",
 	fontWeight: "$medium",
 	color: "$black06",
 	marginBottom: respxUtil(18),
@@ -90,7 +90,7 @@ export const FooterWidget: FC<FooterDataShape> = ({ linkSets, copyright }) => {
 									<ArcaneLink
 										fontWeight="normal"
 										key={link.name}
-										fontSize="caption3"
+										fontSize="$caption3"
 										color="$black01"
 										{...link}
 									/>
