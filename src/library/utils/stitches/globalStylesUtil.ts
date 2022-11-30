@@ -1,7 +1,6 @@
 import { globalCss } from "./stitches.config";
 
 export const globalStylesUtil = globalCss({
-	"@import": "../css/modernreset.css",
 	"*": {
 		margin: 0,
 		padding: 0,
@@ -30,13 +29,8 @@ export const globalStylesUtil = globalCss({
 		outline: 0,
 	},
 
-	"@font-face": {
-		fontFamily: "Inter",
-		src: 'url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap")',
-	},
-
 	body: {
-		fontFamily: `Inter, Helvetica, -apple-system,BlinkMacSystemFont, Segoe UI, Roboto Oxygen, Ubuntu, Cantarell Open Sans, Helvetica Neue,sans-serif`,
+		fontFamily: `Inter Tight, Inter, Helvetica, -apple-system,BlinkMacSystemFont, Segoe UI, Roboto Oxygen, Ubuntu, Cantarell Open Sans, Helvetica Neue,sans-serif`,
 		letterSpacing: "-0.3px",
 		fontSynthesis: "none",
 		textRendering: "optimizeLegibility",
