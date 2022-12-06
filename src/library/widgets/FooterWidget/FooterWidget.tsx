@@ -88,7 +88,7 @@ export const FooterWidget: FC<FooterDataShape> = ({ linkSets, copyright }) => {
 							<LinksContainer>
 								{linkSet.links.map((link) => (
 									<ArcaneLink
-										fontWeight="normal"
+										fontWeight="420"
 										key={link.name}
 										fontSize="$caption3"
 										color="$black01"
