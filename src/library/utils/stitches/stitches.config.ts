@@ -44,6 +44,7 @@ export const { styled, globalCss } = createStitches({
 		fontWeights: { medium: 500, semiBold: 600, bold: 700 },
 		shadows: {
 			shOne: `0 ${respxUtil(16)} ${respxUtil(40)} ${respxUtil(4)} #c7c7cc`,
+			shTwo: `0 ${respxUtil(10)} ${respxUtil(32)} ${respxUtil(2)} #d4d4d8`,
 		},
 	},
 	media: {
