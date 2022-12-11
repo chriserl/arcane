@@ -23,11 +23,6 @@ const Container = styled("nav", {
 	position: "relative",
 	zIndex: "999",
 	backdropFilter: "blur(48px)",
-	flexContainer: {
-		direction: "row",
-		align: "center",
-		justify: "space-between",
-	},
 
 	"@br640": {
 		padding: `${respxUtil(8)} ${respxUtil(48)}`,
@@ -44,6 +39,17 @@ const Container = styled("nav", {
 				borderBottom: "1px solid $black04",
 			},
 		},
+	},
+});
+
+const Wrapper = styled("div", {
+	width: "100%",
+	maxWidth: "1440px",
+	margin: "0 auto",
+	flexContainer: {
+		direction: "row",
+		align: "center",
+		justify: "space-between",
 	},
 });
 
@@ -168,35 +174,37 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 
 	return (
 		<Container theme={theme}>
-			<BrandLinksContainer theme={theme}>
-				<BrandContainer theme={theme}>
-					<ArcaneLink
-						name={brand.name}
-						url={brand.url}
-						color="$gray00"
-						fontSize="$body"
-						fontWeight="$medium"
+			<Wrapper>
+				<BrandLinksContainer theme={theme}>
+					<BrandContainer theme={theme}>
+						<ArcaneLink
+							name={brand.name}
+							url={brand.url}
+							color="$gray00"
+							fontSize="$body"
+							fontWeight="$medium"
+						/>
+						<div className="closeButton">
+							<Button {...closeButtonData} />
+						</div>
+					</BrandContainer>
+					<NavigationLinksFragment
+						theme={theme}
+						toggleState={linksClosed}
+						links={navLinksData}
+						isolatedLink={isolatedLink}
 					/>
-					<div className="closeButton">
-						<Button {...closeButtonData} />
-					</div>
-				</BrandContainer>
-				<NavigationLinksFragment
-					theme={theme}
-					toggleState={linksClosed}
-					links={navLinksData}
-					isolatedLink={isolatedLink}
-				/>
-			</BrandLinksContainer>
-			<IsolatedLink media="tab">
-				<ArcaneLink
-					name={isolatedLink.name}
-					url={isolatedLink.url}
-					color="primary"
-					fontWeight="normal"
-					fontSize="caption2"
-				/>
-			</IsolatedLink>
+				</BrandLinksContainer>
+				<IsolatedLink media="tab">
+					<ArcaneLink
+						name={isolatedLink.name}
+						url={isolatedLink.url}
+						color="primary"
+						fontWeight="normal"
+						fontSize="caption2"
+					/>
+				</IsolatedLink>
+			</Wrapper>
 		</Container>
 	);
 };
