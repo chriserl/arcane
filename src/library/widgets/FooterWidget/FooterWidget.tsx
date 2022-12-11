@@ -21,7 +21,7 @@ const Container = styled("footer", {
 	left: "0",
 	backgroundColor: "$gray02",
 	marginTop: respxUtil(112),
-	borderTop: `${respxUtil(1.9)} solid $gray03`,
+	borderTop: "2px solid $gray03",
 });
 
 const FooterWrapper = styled("div", {
