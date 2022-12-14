@@ -5,7 +5,7 @@ export const globalStylesUtil = globalCss({
 		margin: 0,
 		padding: 0,
 		boxSizing: "borderBox",
-		fontWeight: "normal",
+		fontWeight: "410",
 	},
 
 	":root": {
