@@ -21,7 +21,7 @@ export interface NavigationWidgetDataShape {
 const Container = styled("nav", {
 	width: "auto",
 	position: "relative",
-	zIndex: "999",
+	zIndex: "10",
 	backdropFilter: "blur(48px)",
 
 	"@br640": {
