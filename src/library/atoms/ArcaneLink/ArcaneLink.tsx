@@ -8,6 +8,7 @@ export interface ArcaneLinkShape {
 	fontWeight: string;
 	color: string;
 	icon?: { class: string; position: "left" | "right" };
+	newTab?: boolean;
 }
 
 const Container = styled("div", {
@@ -36,6 +37,7 @@ export const ArcaneLink: FC<ArcaneLinkShape> = ({
 	fontWeight,
 	color,
 	icon,
+	newTab,
 }) => {
 	return (
 		<Container
@@ -43,7 +45,11 @@ export const ArcaneLink: FC<ArcaneLinkShape> = ({
 			iconPosition={icon ? icon.position : "right"}
 		>
 			{icon && <i className={icon.class} id="linkIcon"></i>}
-			<Anchor css={{ fontWeight }} href={url}>
+			<Anchor
+				css={{ fontWeight }}
+				href={url}
+				target={newTab === true ? "_blank" : "_self"}
+			>
 				{name}
 			</Anchor>
 		</Container>
