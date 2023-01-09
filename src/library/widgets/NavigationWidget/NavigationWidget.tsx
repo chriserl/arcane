@@ -168,7 +168,7 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 			name: `${linksClosed ? "dots-vertical-rounded" : "x"}`,
 			weight: "normal",
 		},
-		size: "body",
+		fontSize: "body",
 		clickFunction: togglelinksClosed,
 	};
 

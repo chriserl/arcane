@@ -3,9 +3,9 @@ import { styled } from "../../utils/stitches/stitches.config";
 
 export interface ButtonShape {
 	type: "text" | "icon" | "textIcon";
-	color: "primary" | "gray00" | "black01" | "black06";
-	size: "caption2" | "body";
 	text?: string;
+	color: string;
+	fontSize: string;
 	iconPosition?: "left" | "right";
 	icon?: {
 		name: string;
@@ -51,35 +51,13 @@ const Container = styled("button", {
 				flexDirection: "row-reverse",
 			},
 		},
-		color: {
-			primary: {
-				color: "$primary",
-			},
-			gray00: {
-				color: "$gray00",
-			},
-			black01: {
-				color: "$black01",
-			},
-			black06: {
-				color: "$black06",
-			},
-		},
-		size: {
-			caption2: {
-				fontSize: "$caption2",
-			},
-			body: {
-				fontSize: "$body",
-			},
-		},
 	},
 });
 
 export const Button: FC<ButtonShape> = ({
 	type,
 	color,
-	size,
+	fontSize,
 	icon,
 	iconPosition,
 	text,
@@ -88,9 +66,8 @@ export const Button: FC<ButtonShape> = ({
 	return (
 		<Container
 			type={type}
-			color={color}
-			size={size}
 			iconPosition={iconPosition}
+			css={{ color, fontSize }}
 			onClick={() => clickFunction && clickFunction()}
 		>
 			{icon && (

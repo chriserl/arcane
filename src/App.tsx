@@ -12,11 +12,12 @@ import {
 	FooterDataShape,
 } from "./library/widgets/FooterWidget/FooterWidget";
 import { Button, ButtonShape } from "./library/atoms/Button/Button";
+import { ArcaneLink } from "./library/atoms/ArcaneLink/ArcaneLink";
 
 const buttonData: ButtonShape = {
 	type: "textIcon",
-	color: "primary",
-	size: "body",
+	color: "$primary",
+	fontSize: "$body",
 	text: "Wien",
 	iconPosition: "left",
 	icon: {
