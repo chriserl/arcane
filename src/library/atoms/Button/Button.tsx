@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, MouseEvent } from "react";
 import { styled } from "../../utils/stitches/stitches.config";
 
 export interface ButtonShape {
@@ -11,7 +11,7 @@ export interface ButtonShape {
 		name: string;
 		weight: "normal" | "solid";
 	};
-	clickFunction?: VoidFunction;
+	clickFunction?: Function;
 }
 
 const Container = styled("button", {
@@ -68,7 +68,9 @@ export const Button: FC<ButtonShape> = ({
 			type={type}
 			iconPosition={iconPosition}
 			css={{ color, fontSize }}
-			onClick={() => clickFunction && clickFunction()}
+			onClick={(clickEvent: MouseEvent) =>
+				clickFunction && clickFunction(clickEvent)
+			}
 		>
 			{icon && (
 				<i

@@ -114,7 +114,10 @@ function App() {
 			<NavigationWidget {...NavigationData} />
 			<Main>
 				<SmallBox />
-				<Button {...buttonData} />
+				<Button
+					{...buttonData}
+					clickFunction={(e: MouseEvent) => console.log(e)}
+				/>
 			</Main>
 			<FooterWidget {...footerData} />
 		</div>
