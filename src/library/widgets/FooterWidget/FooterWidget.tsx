@@ -10,6 +10,7 @@ interface LinkSetDataShape {
 }
 
 export interface FooterDataShape {
+	theme: "light" | "dark";
 	linkSets: LinkSetDataShape[];
 	copyright: string;
 }
@@ -19,9 +20,20 @@ const Container = styled("footer", {
 	position: "relative",
 	bottom: "0",
 	left: "0",
-	backgroundColor: "$gray02",
 	marginTop: respxUtil(112),
-	borderTop: "2px solid $gray03",
+
+	variants: {
+		theme: {
+			light: {
+				backgroundColor: "$gray02",
+				borderTop: "2px solid $gray03",
+			},
+			dark: {
+				backgroundColor: "$black06",
+				borderTop: "2px solid $black05",
+			},
+		},
+	},
 });
 
 const FooterWrapper = styled("div", {
@@ -60,6 +72,13 @@ const LinkSetTitle = styled("p", {
 	fontWeight: "$medium",
 	color: "$black06",
 	marginBottom: respxUtil(18),
+
+	variants: {
+		theme: {
+			light: { color: "$black06" },
+			dark: { color: "$gray00" },
+		},
+	},
 });
 
 const LinksContainer = styled("div", {
@@ -78,14 +97,18 @@ const CopyrightContainer = styled("p", {
 	color: "$gray06",
 });
 
-export const FooterWidget: FC<FooterDataShape> = ({ linkSets, copyright }) => {
+export const FooterWidget: FC<FooterDataShape> = ({
+	theme,
+	linkSets,
+	copyright,
+}) => {
 	return (
-		<Container>
+		<Container theme={theme}>
 			<FooterWrapper>
 				<LinkSetsWrapper>
 					{linkSets.map((linkSet) => (
 						<LinkSetContainer key={linkSet.title}>
-							<LinkSetTitle>{linkSet.title}</LinkSetTitle>
+							<LinkSetTitle theme={theme}>{linkSet.title}</LinkSetTitle>
 							<LinksContainer>
 								{linkSet.links.map((link) => (
 									<ArcaneLink
