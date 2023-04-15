@@ -163,9 +163,9 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 		setlinksClosed(() => (linksClosed ? false : true));
 	const closeButtonData: ButtonShape = {
 		type: "icon",
-		color: `${theme === "light" ? "black06" : "gray00"}`,
+		color: `${theme === "light" ? "$black06" : "$gray00"}`,
 		icon: {
-			name: `${linksClosed ? "dots-vertical-rounded" : "x"}`,
+			name: `${linksClosed ? "menu" : "x"}`,
 			weight: "normal",
 		},
 		fontSize: "body",
