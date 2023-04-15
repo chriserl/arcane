@@ -105,7 +105,6 @@ const LinksListItem = styled("li", {
 
 	a: {
 		width: "100%",
-		textTransform: "capitalize",
 		padding: `${respxUtil(4)} 0`,
 	},
 
