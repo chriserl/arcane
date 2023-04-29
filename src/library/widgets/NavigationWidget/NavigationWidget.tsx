@@ -168,7 +168,7 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 			name: `${linksClosed ? "menu" : "x"}`,
 			weight: "normal",
 		},
-		fontSize: "body",
+		fontSize: "$heading3",
 		clickFunction: togglelinksClosed,
 	};
 

@@ -12,7 +12,6 @@ import {
 	FooterDataShape,
 } from "./library/widgets/FooterWidget/FooterWidget";
 import { Button, ButtonShape } from "./library/atoms/Button/Button";
-import { ArcaneLink } from "./library/atoms/ArcaneLink/ArcaneLink";
 
 const buttonData: ButtonShape = {
 	type: "textIcon",
@@ -47,7 +46,7 @@ const isolatedLink: NavLinkFragmentDataShape = {
 };
 
 const NavigationData: NavigationWidgetDataShape = {
-	theme: "light",
+	theme: "dark",
 	brand: { name: "Arcane", url: "/" },
 	navLinksData: navLinkObjects,
 	isolatedLink: isolatedLink,
@@ -73,6 +72,7 @@ const SmallBox = styled("div", {
 });
 
 const footerData: FooterDataShape = {
+	theme: "dark",
 	linkSets: [
 		{
 			title: "Montara",
