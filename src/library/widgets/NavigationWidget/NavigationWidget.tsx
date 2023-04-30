@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { NavigationLinksFragment } from "./NavigationLinksFragment";
 import { styled } from "../../utils/stitches/stitches.config";
 import { respxUtil } from "../../utils/stitches/respxUtil";
@@ -17,6 +17,7 @@ export interface NavigationWidgetDataShape {
 	brandIcon?: string;
 	navLinksData: NavLinkFragmentDataShape[];
 	isolatedLink: NavLinkFragmentDataShape;
+	navIndicator?: Boolean;
 }
 
 const Container = styled("nav", {
@@ -143,6 +144,16 @@ const BrandIcon = styled("img", {
 	marginRight: respxUtil(5),
 });
 
+const Indicator = styled("i", {
+	position: "absolute",
+	bottom: respxUtil(20),
+	zIndex: "3",
+	color: "$primary",
+	fontSize: "$title3",
+
+	"@br640": { right: respxUtil(24) },
+});
+
 export const IsolatedLink = styled("li", {
 	color: "$primary",
 	flexContainer: {
@@ -174,6 +185,7 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 	brandIcon,
 	navLinksData,
 	isolatedLink,
+	navIndicator,
 }) => {
 	const [linksClosed, setlinksClosed] = useState(() => true);
 	const togglelinksClosed = () =>
@@ -205,6 +217,9 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 							/>
 						</BrandWrapper>
 						<div className="closeButton">
+							{navIndicator === true && (
+								<Indicator className="bx bx-wifi-0"></Indicator>
+							)}
 							<Button {...closeButtonData} />
 						</div>
 					</BrandContainer>
@@ -216,6 +231,9 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 					/>
 				</BrandLinksContainer>
 				<IsolatedLink media="tab">
+					{navIndicator === true && (
+						<Indicator className="bx bx-wifi-0"></Indicator>
+					)}
 					<ArcaneLink
 						name={isolatedLink.name}
 						url={isolatedLink.url}
