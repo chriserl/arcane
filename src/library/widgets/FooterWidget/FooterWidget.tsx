@@ -107,7 +107,7 @@ export const FooterWidget: FC<FooterDataShape> = ({
 			<FooterWrapper>
 				<LinkSetsWrapper>
 					{linkSets.map((linkSet) => (
-						<LinkSetContainer key={linkSet.title}>
+						<LinkSetContainer key={Math.random()}>
 							<LinkSetTitle theme={theme}>{linkSet.title}</LinkSetTitle>
 							<LinksContainer>
 								{linkSet.links.map((link) => (
