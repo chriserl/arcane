@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { NavigationLinksFragment } from "./NavigationLinksFragment";
 import { styled } from "../../utils/stitches/stitches.config";
 import { respxUtil } from "../../utils/stitches/respxUtil";
@@ -14,6 +14,7 @@ export interface NavLinkFragmentDataShape {
 export interface NavigationWidgetDataShape {
 	theme: "light" | "dark";
 	brand: NavLinkFragmentDataShape;
+	brandIcon?: string;
 	navLinksData: NavLinkFragmentDataShape[];
 	isolatedLink: NavLinkFragmentDataShape;
 }
@@ -82,6 +83,14 @@ const BrandLinksContainer = styled("div", {
 	},
 });
 
+const BrandWrapper = styled("div", {
+	flexContainer: {
+		direction: "row",
+		align: "center",
+		justify: "space-between",
+	},
+});
+
 const BrandContainer = styled("div", {
 	padding: `${respxUtil(12)} ${respxUtil(16)}`,
 
@@ -127,6 +136,13 @@ const BrandContainer = styled("div", {
 	},
 });
 
+const BrandIcon = styled("img", {
+	width: respxUtil(20),
+	height: respxUtil(20),
+	objectFit: "cover",
+	marginRight: respxUtil(5),
+});
+
 export const IsolatedLink = styled("li", {
 	color: "$primary",
 	flexContainer: {
@@ -155,6 +171,7 @@ export const IsolatedLink = styled("li", {
 export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 	theme,
 	brand,
+	brandIcon,
 	navLinksData,
 	isolatedLink,
 }) => {
@@ -177,13 +194,16 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 			<Wrapper>
 				<BrandLinksContainer theme={theme}>
 					<BrandContainer theme={theme}>
-						<ArcaneLink
-							name={brand.name}
-							url={brand.url}
-							color="$gray00"
-							fontSize="$body"
-							fontWeight="$medium"
-						/>
+						<BrandWrapper>
+							{brandIcon && <BrandIcon src={brandIcon} />}
+							<ArcaneLink
+								name={brand.name}
+								url={brand.url}
+								color="$gray00"
+								fontSize="$body"
+								fontWeight="$medium"
+							/>
+						</BrandWrapper>
 						<div className="closeButton">
 							<Button {...closeButtonData} />
 						</div>
