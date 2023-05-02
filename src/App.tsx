@@ -11,6 +11,9 @@ import {
 	FooterWidget,
 	FooterDataShape,
 } from "./library/widgets/FooterWidget/FooterWidget";
+import { respx } from "./library/utils/respx";
+import { Input, InputShape } from "./library/elements/Forms/Input";
+import { InputWrapper } from "./library/elements/Forms/InputWrapper";
 
 const navLinkObjects: NavLinkFragmentDataShape[] = [
 	{
@@ -40,7 +43,7 @@ const NavigationData: NavigationWidgetDataShape = {
 };
 
 const Main = styled("main", {
-	width: "100^",
+	width: "25%",
 	height: "72vh",
 	backgroundColor: "$gray01",
 	flexUtil: {
@@ -48,6 +51,7 @@ const Main = styled("main", {
 		align: "center",
 		justify: "center",
 	},
+	margin: "0 auto",
 });
 
 const footerData: FooterDataShape = {
@@ -85,13 +89,37 @@ const footerData: FooterDataShape = {
 	copyright: "Montara Studio 2022",
 };
 
+const InputState: InputShape = {
+	type: "text",
+	placeholder: {
+		text: "Arcane",
+		fontSize: "$caption02",
+		color: "$black01",
+	},
+	borderRadius: respx(0),
+	color: "$black05",
+	fontSize: "$caption02",
+	backgroundColor: "$gray03",
+	icon: {
+		name: "hash",
+		weight: "normal",
+	},
+	stateFunction: () => console.log("Func"),
+};
+
 function App() {
 	arcaneBase();
 
 	return (
 		<div className="App">
 			<NavigationWidget {...NavigationData} />
-			<Main></Main>
+			<Main>
+				<InputWrapper>
+					<Input {...InputState} />
+					<Input {...InputState} />
+					<Input {...InputState} />
+				</InputWrapper>
+			</Main>
 			<FooterWidget {...footerData} />
 		</div>
 	);

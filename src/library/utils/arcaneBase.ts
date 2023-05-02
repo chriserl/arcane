@@ -30,6 +30,11 @@ export const arcaneBase = globalCss({
 		border: "none",
 	},
 
+	input: {
+		border: "none",
+		outline: "none",
+	},
+
 	"&:focus:not(:focus-visible)": {
 		outline: 0,
 	},
