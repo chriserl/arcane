@@ -2,7 +2,7 @@ import { FC } from "react";
 import { NavigationLinksFragment } from "./NavigationLinksFragment";
 import { styled } from "../../utils/stitches/stitches.config";
 import { respxUtil } from "../../utils/stitches/respxUtil";
-import { Button, ButtonShape } from "../../atoms/Button/Button";
+import { Button, ButtonShape } from "../../elements/Button/Button";
 import { Anchor } from "../../elements/Anchor/Anchor";
 import { useState } from "react";
 
@@ -179,14 +179,14 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 	const togglelinksClosed = () =>
 		setlinksClosed(() => (linksClosed ? false : true));
 	const closeButtonData: ButtonShape = {
-		type: "icon",
 		color: `${theme === "light" ? "$black06" : "$gray00"}`,
 		icon: {
 			name: `${linksClosed ? "menu" : "x"}`,
 			weight: "normal",
+			color: `${theme === "light" ? "$black06" : "$gray00"}`,
 		},
 		fontSize: "$heading3",
-		clickFunction: togglelinksClosed,
+		clickFunc: togglelinksClosed,
 	};
 
 	return (

@@ -2,7 +2,7 @@ import type { FC } from "react";
 import { styled } from "../../utils/stitches/stitches.config";
 
 interface ButtonShape {
-	text: string;
+	text?: string;
 	icon?: {
 		name: string;
 		weight: "normal" | "solid";
