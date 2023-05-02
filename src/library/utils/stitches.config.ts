@@ -1,5 +1,5 @@
 import { createStitches } from "@stitches/react";
-import { respxUtil } from "./respxUtil";
+import { respx } from "./respx";
 
 export const { styled, globalCss } = createStitches({
 	theme: {
@@ -43,8 +43,8 @@ export const { styled, globalCss } = createStitches({
 		},
 		fontWeights: { medium: 500, semiBold: 600, bold: 700 },
 		shadows: {
-			shOne: `0 ${respxUtil(16)} ${respxUtil(40)} ${respxUtil(4)} #c7c7cc`,
-			shTwo: `0 ${respxUtil(10)} ${respxUtil(32)} ${respxUtil(2)} #d4d4d8`,
+			shOne: `0 ${respx(16)} ${respx(40)} ${respx(4)} #c7c7cc`,
+			shTwo: `0 ${respx(10)} ${respx(32)} ${respx(2)} #d4d4d8`,
 		},
 	},
 	media: {
@@ -54,13 +54,13 @@ export const { styled, globalCss } = createStitches({
 		br1440: "(min-width: 1440px)",
 	},
 	utils: {
-		flexContainer: (flexValues: any) => ({
+		flexUtil: (flexValues: any) => ({
 			display: "flex",
 			flexDirection: flexValues["direction"],
 			alignItems: flexValues["align"],
 			justifyContent: flexValues["justify"],
 		}),
-		gridContainer: (gridValues: any) => ({
+		gridUtil: (gridValues: any) => ({
 			display: "grid",
 			alignItems: gridValues["align"],
 			justifyContent: gridValues["justify"],

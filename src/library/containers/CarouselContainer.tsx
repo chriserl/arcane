@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from "react";
-import { styled } from "../utils/stitches/stitches.config";
+import { styled } from "../utils/stitches.config";
 
 const Container = styled("div", {
 	width: "100%",

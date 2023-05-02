@@ -1,8 +1,8 @@
 import type { FC } from "react";
 import { NavLinkFragmentDataShape } from "../NavigationWidget/NavigationWidget";
-import { styled } from "../../utils/stitches/stitches.config";
+import { styled } from "../../utils/stitches.config";
 import { Anchor } from "../../elements/Anchor/Anchor";
-import { respxUtil } from "../../utils/stitches/respxUtil";
+import { respx } from "../../utils/respx";
 
 interface LinkSetDataShape {
 	title?: string;
@@ -20,7 +20,7 @@ const Container = styled("footer", {
 	position: "relative",
 	bottom: "0",
 	left: "0",
-	marginTop: respxUtil(112),
+	marginTop: respx(112),
 
 	variants: {
 		theme: {
@@ -37,33 +37,33 @@ const Container = styled("footer", {
 });
 
 const FooterWrapper = styled("div", {
-	padding: `${respxUtil(48)} ${respxUtil(32)} ${respxUtil(32)}`,
+	padding: `${respx(48)} ${respx(32)} ${respx(32)}`,
 });
 
 const LinkSetsWrapper = styled("div", {
 	width: "100%",
-	flexContainer: {
+	flexUtil: {
 		direction: "column",
 		align: "baseline",
 		justify: "center",
 	},
 
 	"@br640": {
-		flexContainer: {
+		flexUtil: {
 			direction: "row",
 			align: "baseline",
 			justify: "center",
 		},
-		marginBottom: respxUtil(48),
+		marginBottom: respx(48),
 	},
 });
 
 const LinkSetContainer = styled("div", {
 	width: "clamp(1fr, max-content, 280px))",
-	marginBottom: respxUtil(48),
+	marginBottom: respx(48),
 
 	"@br640": {
-		margin: `0 ${respxUtil(48)}`,
+		margin: `0 ${respx(48)}`,
 	},
 });
 
@@ -71,7 +71,7 @@ const LinkSetTitle = styled("p", {
 	fontSize: "$caption3",
 	fontWeight: "$medium",
 	color: "$black06",
-	marginBottom: respxUtil(18),
+	marginBottom: respx(18),
 
 	variants: {
 		theme: {
@@ -82,13 +82,13 @@ const LinkSetTitle = styled("p", {
 });
 
 const LinksContainer = styled("div", {
-	gridContainer: {
+	gridUtil: {
 		align: "start",
 		justify: "start",
 	},
 	justifyItems: "start",
 	gridColumn: "1fr",
-	gridRowGap: respxUtil(14),
+	gridRowGap: respx(14),
 });
 
 const CopyrightContainer = styled("p", {

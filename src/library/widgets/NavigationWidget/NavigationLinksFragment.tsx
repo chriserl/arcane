@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { styled } from "../../utils/stitches/stitches.config";
-import { respxUtil } from "../../utils/stitches/respxUtil";
+import { styled } from "../../utils/stitches.config";
+import { respx } from "../../utils/respx";
 import { Anchor } from "../../elements/Anchor/Anchor";
 import { NavLinkFragmentDataShape, IsolatedLink } from "./NavigationWidget";
 
@@ -17,18 +17,18 @@ const LinksListFragment = styled("ul", {
 	left: "0",
 	zIndex: "999",
 	background: "$gray02",
-	paddingBottom: `${respxUtil(64)}`,
-	flexContainer: {
+	paddingBottom: `${respx(64)}`,
+	flexUtil: {
 		direction: "column",
 		align: "flexStart",
 		justify: "center",
 	},
 
 	li: {
-		width: `calc(100vw - ${respxUtil(56)})`,
+		width: `calc(100vw - ${respx(56)})`,
 		position: "relative",
-		left: respxUtil(28),
-		right: respxUtil(28),
+		left: respx(28),
+		right: respx(28),
 	},
 
 	variants: {
@@ -79,33 +79,33 @@ const LinksListFragment = styled("ul", {
 		width: "max-content",
 		position: "static",
 		margin: 0,
-		marginLeft: respxUtil(64),
+		marginLeft: respx(64),
 		padding: "0",
-		flexContainer: {
+		flexUtil: {
 			direction: "row",
 			align: "center",
 			justify: "center",
 		},
 		li: {
 			width: "max-content",
-			margin: `0 ${respxUtil(20)}`,
+			margin: `0 ${respx(20)}`,
 		},
 		a: {
 			width: "max-content",
-			padding: `${respxUtil(2)}`,
+			padding: `${respx(2)}`,
 		},
 	},
 });
 
 const LinksListItem = styled("li", {
-	margin: `${respxUtil(10)} 0`,
+	margin: `${respx(10)} 0`,
 	"&:first-child": {
-		marginTop: `${respxUtil(32)}`,
+		marginTop: `${respx(32)}`,
 	},
 
 	a: {
 		width: "100%",
-		padding: `${respxUtil(4)} 0`,
+		padding: `${respx(4)} 0`,
 	},
 
 	variants: {
@@ -126,7 +126,7 @@ const LinksListItem = styled("li", {
 	},
 
 	"@br640": {
-		margin: `0 ${respxUtil(20)}`,
+		margin: `0 ${respx(20)}`,
 		"&:first-child": {
 			marginTop: "0",
 		},

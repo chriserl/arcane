@@ -1,6 +1,6 @@
 import { globalCss } from "./stitches.config";
 
-export const globalStylesUtil = globalCss({
+export const arcaneBase = globalCss({
 	"*": {
 		margin: 0,
 		padding: 0,

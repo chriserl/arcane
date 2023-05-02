@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { styled } from "../../utils/stitches/stitches.config";
+import { styled } from "../../utils/stitches.config";
 
 export interface AnchorShape {
 	name: string;
@@ -18,7 +18,7 @@ export interface AnchorShape {
 
 const Container = styled("a", {
 	width: "max-content",
-	flexContainer: {
+	flexUtil: {
 		direction: "row",
 		align: "center",
 		justify: "flex-end",

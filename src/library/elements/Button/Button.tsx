@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { styled } from "../../utils/stitches/stitches.config";
+import { styled } from "../../utils/stitches.config";
 
 interface ButtonShape {
 	text?: string;
@@ -21,7 +21,7 @@ interface ButtonShape {
 
 const Container = styled("button", {
 	width: "max-content",
-	flexContainer: {
+	flexUtil: {
 		direction: "row",
 		align: "center",
 		justify: "start",

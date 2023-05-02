@@ -1,6 +1,6 @@
-export { styled } from "./utils/stitches/stitches.config";
-export { globalStylesUtil } from "./utils/stitches/globalStylesUtil";
-export { respxUtil } from "./utils/stitches/respxUtil";
+export { styled } from "./utils/stitches.config";
+export { arcaneBase } from "./utils/arcaneBase";
+export { respx } from "./utils/respx";
 export { Anchor } from "./elements/Anchor/Anchor";
 export { Button } from "./elements/Button/Button";
 export { NavigationWidget } from "./widgets/NavigationWidget/NavigationWidget";

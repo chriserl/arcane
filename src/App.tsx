@@ -4,8 +4,8 @@ import {
 	NavLinkFragmentDataShape,
 	NavigationWidgetDataShape,
 } from "./library/widgets/NavigationWidget/NavigationWidget";
-import { globalStylesUtil } from "./library/utils/stitches/globalStylesUtil";
-import { styled } from "./library/utils/stitches/stitches.config";
+import { arcaneBase } from "./library/utils/arcaneBase";
+import { styled } from "./library/utils/stitches.config";
 import "boxicons/css/boxicons.min.css";
 import {
 	FooterWidget,
@@ -43,7 +43,7 @@ const Main = styled("main", {
 	width: "100^",
 	height: "72vh",
 	backgroundColor: "$gray01",
-	flexContainer: {
+	flexUtil: {
 		direction: "row",
 		align: "center",
 		justify: "center",
@@ -86,7 +86,7 @@ const footerData: FooterDataShape = {
 };
 
 function App() {
-	globalStylesUtil();
+	arcaneBase();
 
 	return (
 		<div className="App">

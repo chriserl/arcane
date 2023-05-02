@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { NavigationLinksFragment } from "./NavigationLinksFragment";
-import { styled } from "../../utils/stitches/stitches.config";
-import { respxUtil } from "../../utils/stitches/respxUtil";
+import { styled } from "../../utils/stitches.config";
+import { respx } from "../../utils/respx";
 import { Button, ButtonShape } from "../../elements/Button/Button";
 import { Anchor } from "../../elements/Anchor/Anchor";
 import { useState } from "react";
@@ -26,7 +26,7 @@ const Container = styled("nav", {
 	backdropFilter: "blur(48px)",
 
 	"@br640": {
-		padding: `${respxUtil(8)} ${respxUtil(48)}`,
+		padding: `${respx(8)} ${respx(48)}`,
 	},
 
 	variants: {
@@ -47,7 +47,7 @@ const Wrapper = styled("div", {
 	width: "100%",
 	maxWidth: "1440px",
 	margin: "0 auto",
-	flexContainer: {
+	flexUtil: {
 		direction: "row",
 		align: "center",
 		justify: "space-between",
@@ -75,7 +75,7 @@ const BrandLinksContainer = styled("div", {
 		width: "max-content",
 		position: "static",
 		borderBottom: "none",
-		flexContainer: {
+		flexUtil: {
 			direction: "row",
 			align: "center",
 			justify: "center",
@@ -84,7 +84,7 @@ const BrandLinksContainer = styled("div", {
 });
 
 const BrandWrapper = styled("div", {
-	flexContainer: {
+	flexUtil: {
 		direction: "row",
 		align: "center",
 		justify: "space-between",
@@ -92,9 +92,9 @@ const BrandWrapper = styled("div", {
 });
 
 const BrandContainer = styled("div", {
-	padding: `${respxUtil(12)} ${respxUtil(16)}`,
+	padding: `${respx(12)} ${respx(16)}`,
 
-	flexContainer: {
+	flexUtil: {
 		direction: "row",
 		align: "center",
 		justify: "space-between",
@@ -137,15 +137,15 @@ const BrandContainer = styled("div", {
 });
 
 const BrandIcon = styled("img", {
-	width: respxUtil(20),
-	height: respxUtil(20),
+	width: respx(20),
+	height: respx(20),
 	objectFit: "cover",
-	marginRight: respxUtil(5),
+	marginRight: respx(5),
 });
 
 export const IsolatedLink = styled("li", {
 	color: "$primary",
-	flexContainer: {
+	flexUtil: {
 		direction: "row",
 		align: "center",
 		justify: "flex-start",
@@ -156,7 +156,7 @@ export const IsolatedLink = styled("li", {
 			mobile: {
 				display: "flex",
 				width: "100%",
-				margin: `${respxUtil(12)} 0`,
+				margin: `${respx(12)} 0`,
 				a: { color: "$primary", borderBottom: "none" },
 				"@br640": { display: "none" },
 			},
