@@ -12,6 +12,7 @@ import {
 	FooterDataShape,
 } from "./library/widgets/FooterWidget/FooterWidget";
 import { Button, ButtonShape } from "./library/atoms/Button/Button";
+import { Anchor, AnchorShape } from "./library/elements/Anchor/Anchor";
 
 const buttonData: ButtonShape = {
 	type: "textIcon",
@@ -22,6 +23,20 @@ const buttonData: ButtonShape = {
 	icon: {
 		name: "bookmark",
 		weight: "normal",
+	},
+};
+
+const AnchorData: AnchorShape = {
+	name: "Anchor",
+	url: "/",
+	fontSize: "$body",
+	fontWeight: "normal",
+	color: "$primary",
+	icon: {
+		name: "bookmark",
+		fontSize: "$body",
+		weight: "normal",
+		position: "left",
 	},
 };
 
@@ -113,11 +128,8 @@ function App() {
 		<div className="App">
 			<NavigationWidget {...NavigationData} />
 			<Main>
-				<SmallBox />
-				<Button
-					{...buttonData}
-					clickFunction={(e: MouseEvent) => console.log(e)}
-				/>
+				{/* <SmallBox /> */}
+				<Anchor {...AnchorData} />
 			</Main>
 			<FooterWidget {...footerData} />
 		</div>

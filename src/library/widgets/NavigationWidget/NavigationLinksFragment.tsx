@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { styled } from "../../utils/stitches/stitches.config";
 import { respxUtil } from "../../utils/stitches/respxUtil";
-import { ArcaneLink } from "../../atoms/ArcaneLink/ArcaneLink";
+import { Anchor } from "../../elements/Anchor/Anchor";
 import { NavLinkFragmentDataShape, IsolatedLink } from "./NavigationWidget";
 
 interface NavigationLinksDataShape {
@@ -143,7 +143,7 @@ export const NavigationLinksFragment: FC<NavigationLinksDataShape> = ({
 		<LinksListFragment toggle={toggleState ? "close" : "open"} theme={theme}>
 			{links.map((linkObject) => (
 				<LinksListItem key={linkObject.url} theme={theme}>
-					<ArcaneLink
+					<Anchor
 						{...linkObject}
 						color={"black01"}
 						fontSize={"caption2"}
@@ -152,7 +152,7 @@ export const NavigationLinksFragment: FC<NavigationLinksDataShape> = ({
 				</LinksListItem>
 			))}
 			<IsolatedLink media="mobile">
-				<ArcaneLink
+				<Anchor
 					name={isolatedLink.name}
 					url={isolatedLink.url}
 					color="primary"

@@ -3,7 +3,7 @@ import { NavigationLinksFragment } from "./NavigationLinksFragment";
 import { styled } from "../../utils/stitches/stitches.config";
 import { respxUtil } from "../../utils/stitches/respxUtil";
 import { Button, ButtonShape } from "../../atoms/Button/Button";
-import { ArcaneLink } from "../../atoms/ArcaneLink/ArcaneLink";
+import { Anchor } from "../../elements/Anchor/Anchor";
 import { useState } from "react";
 
 export interface NavLinkFragmentDataShape {
@@ -196,7 +196,7 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 					<BrandContainer theme={theme}>
 						<BrandWrapper>
 							{brandIcon && <BrandIcon src={brandIcon} />}
-							<ArcaneLink
+							<Anchor
 								name={brand.name}
 								url={brand.url}
 								color="$gray00"
@@ -216,7 +216,7 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 					/>
 				</BrandLinksContainer>
 				<IsolatedLink media="tab">
-					<ArcaneLink
+					<Anchor
 						name={isolatedLink.name}
 						url={isolatedLink.url}
 						color="primary"

@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { NavLinkFragmentDataShape } from "../NavigationWidget/NavigationWidget";
 import { styled } from "../../utils/stitches/stitches.config";
-import { ArcaneLink } from "../../atoms/ArcaneLink/ArcaneLink";
+import { Anchor } from "../../elements/Anchor/Anchor";
 import { respxUtil } from "../../utils/stitches/respxUtil";
 
 interface LinkSetDataShape {
@@ -111,7 +111,7 @@ export const FooterWidget: FC<FooterDataShape> = ({
 							<LinkSetTitle theme={theme}>{linkSet.title}</LinkSetTitle>
 							<LinksContainer>
 								{linkSet.links.map((link) => (
-									<ArcaneLink
+									<Anchor
 										fontWeight=""
 										key={link.name}
 										fontSize="$caption3"
