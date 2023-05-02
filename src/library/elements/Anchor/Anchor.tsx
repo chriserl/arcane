@@ -21,7 +21,7 @@ const Container = styled("a", {
 	flexContainer: {
 		direction: "row",
 		align: "center",
-		justify: "center",
+		justify: "flex-end",
 	},
 	variants: {
 		iconPosition: {
