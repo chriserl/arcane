@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { styled } from "../../utils/stitches/stitches.config";
 
-export interface ButtonShape {
+interface ButtonShape {
 	text: string;
 	icon?: {
 		name: string;
@@ -33,7 +33,7 @@ const Container = styled("button", {
 
 const IconWrapper = styled("i", {});
 
-export const PadButton: FC<ButtonShape> = ({
+const Button: FC<ButtonShape> = ({
 	text,
 	icon,
 	background,
@@ -70,3 +70,6 @@ export const PadButton: FC<ButtonShape> = ({
 		</Container>
 	);
 };
+
+export { Button };
+export type { ButtonShape };
