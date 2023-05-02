@@ -11,34 +11,6 @@ import {
 	FooterWidget,
 	FooterDataShape,
 } from "./library/widgets/FooterWidget/FooterWidget";
-import { Button, ButtonShape } from "./library/atoms/Button/Button";
-import { Anchor, AnchorShape } from "./library/elements/Anchor/Anchor";
-
-const buttonData: ButtonShape = {
-	type: "textIcon",
-	color: "$primary",
-	fontSize: "$body",
-	text: "Wien",
-	iconPosition: "left",
-	icon: {
-		name: "bookmark",
-		weight: "normal",
-	},
-};
-
-const AnchorData: AnchorShape = {
-	name: "Anchor",
-	url: "/",
-	fontSize: "$body",
-	fontWeight: "normal",
-	color: "$primary",
-	icon: {
-		name: "bookmark",
-		fontSize: "$body",
-		weight: "normal",
-		position: "left",
-	},
-};
 
 const navLinkObjects: NavLinkFragmentDataShape[] = [
 	{
@@ -61,7 +33,7 @@ const isolatedLink: NavLinkFragmentDataShape = {
 };
 
 const NavigationData: NavigationWidgetDataShape = {
-	theme: "dark",
+	theme: "light",
 	brand: { name: "Arcane", url: "/" },
 	navLinksData: navLinkObjects,
 	isolatedLink: isolatedLink,
@@ -70,7 +42,7 @@ const NavigationData: NavigationWidgetDataShape = {
 const Main = styled("main", {
 	width: "100^",
 	height: "72vh",
-	backgroundColor: "$gray02",
+	backgroundColor: "$gray01",
 	flexContainer: {
 		direction: "row",
 		align: "center",
@@ -78,16 +50,8 @@ const Main = styled("main", {
 	},
 });
 
-const SmallBox = styled("div", {
-	width: "100px",
-	height: "100px",
-	borderRadius: "4px",
-	background: "$black02",
-	boxShadow: "$shOne",
-});
-
 const footerData: FooterDataShape = {
-	theme: "dark",
+	theme: "light",
 	linkSets: [
 		{
 			title: "Montara",
@@ -127,10 +91,7 @@ function App() {
 	return (
 		<div className="App">
 			<NavigationWidget {...NavigationData} />
-			<Main>
-				{/* <SmallBox /> */}
-				<Anchor {...AnchorData} />
-			</Main>
+			<Main></Main>
 			<FooterWidget {...footerData} />
 		</div>
 	);

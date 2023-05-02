@@ -25,6 +25,11 @@ export const globalStylesUtil = globalCss({
 		color: "inherit",
 	},
 
+	button: {
+		background: "transparent",
+		border: "none",
+	},
+
 	"&:focus:not(:focus-visible)": {
 		outline: 0,
 	},

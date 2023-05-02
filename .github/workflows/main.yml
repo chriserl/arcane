@@ -1,9 +1,9 @@
-name: Publish Arcane
+name: Publish Arcane[vers]
 
 on:
   push:
     branches:
-      - dev
+      - vers
 
 jobs:
   publish-gpr:
