@@ -17,6 +17,7 @@ import {
 	InputWrapper,
 	InputWrapperShape,
 } from "./library/elements/Forms/InputWrapper";
+import { TextArea } from "./library/elements/Forms/TextArea";
 
 const navLinkObjects: NavLinkFragmentDataShape[] = [
 	{
@@ -99,7 +100,7 @@ const InputState: InputShape = {
 		fontSize: "$caption02",
 		color: "$black01",
 	},
-	borderRadius: respx(0),
+	//borderRadius: respx(0),
 	color: "$black05",
 	fontSize: "$caption02",
 	margin: `${respx(0)} 0 ${respx(10)}`,
@@ -128,6 +129,7 @@ function App() {
 					<Input {...InputState} />
 					<Input {...InputState} />
 					<Input {...InputState} />
+					<TextArea rows={5} {...InputState} />
 				</InputWrapper>
 			</Main>
 			<FooterWidget {...footerData} />

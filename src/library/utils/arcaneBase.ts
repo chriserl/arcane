@@ -35,6 +35,8 @@ export const arcaneBase = globalCss({
 		outline: "none",
 	},
 
+	textarea: { border: "none", outline: "none" },
+
 	"&:focus:not(:focus-visible)": {
 		outline: 0,
 	},
