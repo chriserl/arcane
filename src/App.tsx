@@ -13,7 +13,10 @@ import {
 } from "./library/widgets/FooterWidget/FooterWidget";
 import { respx } from "./library/utils/respx";
 import { Input, InputShape } from "./library/elements/Forms/Input";
-import { InputWrapper } from "./library/elements/Forms/InputWrapper";
+import {
+	InputWrapper,
+	InputWrapperShape,
+} from "./library/elements/Forms/InputWrapper";
 
 const navLinkObjects: NavLinkFragmentDataShape[] = [
 	{
@@ -43,7 +46,7 @@ const NavigationData: NavigationWidgetDataShape = {
 };
 
 const Main = styled("main", {
-	width: "25%",
+	width: "32%",
 	height: "72vh",
 	backgroundColor: "$gray01",
 	flexUtil: {
@@ -99,12 +102,19 @@ const InputState: InputShape = {
 	borderRadius: respx(0),
 	color: "$black05",
 	fontSize: "$caption02",
+	margin: `${respx(0)} 0 ${respx(10)}`,
 	backgroundColor: "$gray03",
 	icon: {
 		name: "hash",
 		weight: "normal",
 	},
 	stateFunction: () => console.log("Func"),
+};
+
+const InputWrapperState: InputWrapperShape = {
+	padding: `${respx(5)} ${respx(7)}`,
+	borderRadius: respx(7),
+	backgroundColor: "$gray03",
 };
 
 function App() {
@@ -114,7 +124,7 @@ function App() {
 		<div className="App">
 			<NavigationWidget {...NavigationData} />
 			<Main>
-				<InputWrapper>
+				<InputWrapper {...InputWrapperState}>
 					<Input {...InputState} />
 					<Input {...InputState} />
 					<Input {...InputState} />

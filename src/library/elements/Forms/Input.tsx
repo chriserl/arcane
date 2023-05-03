@@ -17,13 +17,14 @@ export interface InputShape {
 	fontSize: string;
 	backgroundColor: string;
 	borderRadius?: string;
+	margin?: string;
 	stateFunction: Function;
 }
 
 const Container = styled("div", {
-	width: "100%",
+	width: "stretch",
+	maxWidth: "100%",
 	fontSize: "$caption2",
-	margin: `${respx(10)} 0 ${respx(20)}`,
 	padding: `${respx(8)} ${respx(10)}`,
 	flexUtil: {
 		direction: "row",
@@ -59,10 +60,11 @@ export const Input: FC<InputShape> = ({
 	fontSize,
 	backgroundColor,
 	borderRadius,
+	margin,
 	stateFunction,
 }) => {
 	return (
-		<Container css={{ borderRadius, backgroundColor }}>
+		<Container css={{ borderRadius, margin, backgroundColor }}>
 			{icon && (
 				<Icon
 					css={{ color: placeholder.color, fontSize: placeholder.fontSize }}
