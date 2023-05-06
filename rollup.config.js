@@ -12,6 +12,7 @@ const config = [
 			file: packageJSON.main,
 			format: "esm",
 			sourcemap: true,
+			banner: `'use client';`,
 		},
 		external: [
 			"react",
@@ -31,7 +32,13 @@ const config = [
 	},
 	{
 		input: "src/library/index.ts",
-		output: [{ file: "lib/index.d.ts", format: "esm" }],
+		output: [
+			{
+				file: "lib/index.d.ts",
+				format: "esm",
+				banner: `'use client';`,
+			},
+		],
 		plugins: [dts()],
 	},
 ];

@@ -1,5 +1,3 @@
-"use client";
-
 import type { FC } from "react";
 import { styled } from "../../utils/stitches.config";
 import { respx } from "../../utils/respx";

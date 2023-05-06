@@ -1,5 +1,3 @@
-"use client";
-
 import type { FC } from "react";
 import { NavLinkFragmentDataShape } from "../NavigationWidget/NavigationWidget";
 import { styled } from "../../utils/stitches.config";
