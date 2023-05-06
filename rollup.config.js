@@ -3,16 +3,17 @@ import resolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
 import external from "rollup-plugin-peer-deps-external";
 import dts from "rollup-plugin-dts";
-import packageJSON from "./package.json";
+import packageJSON from "./package.json" assert { type: "json" };
+import preserveDirectives from "rollup-plugin-preserve-directives";
 
 const config = [
 	{
 		input: "./src/library/index.ts",
 		output: {
-			file: packageJSON.main,
+			dir: packageJSON.main,
 			format: "esm",
 			sourcemap: true,
-			banner: `'use client';`,
+			preserveModules: true,
 		},
 		external: [
 			"react",
@@ -28,17 +29,17 @@ const config = [
 			external(),
 			resolve(),
 			typescript({ tsconfig: "./tsconfig.json" }),
+			preserveDirectives.default(),
 		],
 	},
 	{
 		input: "src/library/index.ts",
-		output: [
-			{
-				file: "lib/index.d.ts",
-				format: "esm",
-				banner: `'use client';`,
-			},
-		],
+		output: {
+			file: "lib/index.d.ts",
+			format: "esm",
+			sourcemap: true,
+		},
+
 		plugins: [dts()],
 	},
 ];

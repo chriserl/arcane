@@ -1,8 +1,8 @@
 {
 	"name": "@chriserl/arcane",
 	"description": "Arcane UI Library by Montara Studio",
-	"version": "0.0.46",
-	"main": "lib/index.js",
+	"version": "0.0.47",
+	"main": "lib",
 	"types": "lib/index.d.ts",
 	"type": "module",
 	"repository": {
@@ -50,12 +50,14 @@
 		]
 	},
 	"devDependencies": {
-		"@rollup/plugin-typescript": "^8.3.4",
+		"@rollup/plugin-node-resolve": "^15.0.2",
+		"@rollup/plugin-typescript": "^11.1.0",
 		"boxicons": "^2.1.2",
-		"rollup": "^2.77.3",
+		"rollup": "^3.21.5",
 		"rollup-plugin-babel": "^4.4.0",
-		"rollup-plugin-dts": "^4.2.2",
-		"rollup-plugin-peer-deps-external": "^2.2.4"
+		"rollup-plugin-dts": "^5.3.0",
+		"rollup-plugin-peer-deps-external": "^2.2.4",
+		"rollup-plugin-preserve-directives": "^0.1.0"
 	},
 	"peerDependencies": {
 		"@stitches/react": "^1.2.8",

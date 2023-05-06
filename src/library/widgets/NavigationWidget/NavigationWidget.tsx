@@ -1,3 +1,4 @@
+"use client";
 import { FC } from "react";
 import { NavigationLinksFragment } from "./NavigationLinksFragment";
 import { styled } from "../../utils/stitches.config";
