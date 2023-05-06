@@ -8,7 +8,7 @@ import preserveDirectives from "rollup-plugin-preserve-directives";
 
 const config = [
 	{
-		input: "./src/library/index.ts",
+		input: "./src/index.ts",
 		output: {
 			dir: packageJSON.main,
 			format: "esm",
@@ -31,16 +31,6 @@ const config = [
 			typescript({ tsconfig: "./tsconfig.json" }),
 			preserveDirectives.default(),
 		],
-	},
-	{
-		input: "src/library/index.ts",
-		output: {
-			file: "lib/index.d.ts",
-			format: "esm",
-			sourcemap: true,
-		},
-
-		plugins: [dts()],
 	},
 ];
 
