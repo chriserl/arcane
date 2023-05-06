@@ -16,7 +16,7 @@ jobs:
           node-version: 18
           registry-url: https://npm.pkg.github.com/
           scope: "@chriserl"
-      - run: yarn install
+      - run: yarn add
       - run: yarn build
       - run: yarn publish
         env:
