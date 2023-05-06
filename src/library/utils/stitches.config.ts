@@ -1,3 +1,5 @@
+"use client";
+
 import { createStitches } from "@stitches/react";
 import { respx } from "./respx";
 

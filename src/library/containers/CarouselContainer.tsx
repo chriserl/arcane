@@ -1,3 +1,5 @@
+"use client";
+
 import type { FC, PropsWithChildren } from "react";
 import { styled } from "../utils/stitches.config";
 
