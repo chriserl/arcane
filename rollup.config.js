@@ -2,7 +2,6 @@ import babel from "rollup-plugin-babel";
 import resolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
 import external from "rollup-plugin-peer-deps-external";
-import dts from "rollup-plugin-dts";
 import packageJSON from "./package.json" assert { type: "json" };
 import preserveDirectives from "rollup-plugin-preserve-directives";
 
@@ -14,6 +13,7 @@ const config = [
 			format: "esm",
 			sourcemap: true,
 			preserveModules: true,
+			preserveModulesRoot: "src",
 		},
 		external: [
 			"react",
