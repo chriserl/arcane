@@ -13,7 +13,7 @@ const config = [
 			format: "esm",
 			sourcemap: true,
 			preserveModules: true,
-			preserveModulesRoot: "src",
+			preserveModulesRoot: "lib",
 		},
 		external: [
 			"react",
