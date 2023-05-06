@@ -12,7 +12,6 @@ const config = [
 			dir: packageJSON.main,
 			format: "esm",
 			sourcemap: true,
-			banner: `'use client';`,
 			preserveModules: true,
 			preserveModulesRoot: "src",
 		},
