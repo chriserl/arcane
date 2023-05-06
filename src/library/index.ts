@@ -1,4 +1,3 @@
-"use client";
 export { styled } from "./utils/stitches.config";
 export { arcaneBase } from "./utils/arcaneBase";
 export { respx } from "./utils/respx";
