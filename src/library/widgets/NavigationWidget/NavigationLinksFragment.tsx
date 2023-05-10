@@ -10,6 +10,8 @@ interface NavigationLinksDataShape {
 	toggleState: boolean;
 	links: NavLinkFragmentDataShape[];
 	isolatedLink: NavLinkFragmentDataShape;
+	backgroundColor?: string;
+	borderBottom?: string;
 }
 
 const LinksListFragment = styled("ul", {
@@ -17,7 +19,6 @@ const LinksListFragment = styled("ul", {
 	position: "absolute",
 	left: "0",
 	zIndex: "999",
-	background: "$gray02",
 	paddingBottom: `${respx(64)}`,
 	flexUtil: {
 		direction: "column",
@@ -46,8 +47,6 @@ const LinksListFragment = styled("ul", {
 		},
 		theme: {
 			light: {
-				background: "$gray02",
-				borderBottom: "0.8px solid $gray04",
 				"@br640": {
 					borderBottom: "none",
 				},
@@ -60,8 +59,6 @@ const LinksListFragment = styled("ul", {
 				},
 			},
 			dark: {
-				background: "$black06",
-				borderBottom: "0.8px solid $black04",
 				"@br640": {
 					borderBottom: "none",
 				},
@@ -139,9 +136,15 @@ export const NavigationLinksFragment: FC<NavigationLinksDataShape> = ({
 	toggleState,
 	links,
 	isolatedLink,
+	backgroundColor,
+	borderBottom,
 }) => {
 	return (
-		<LinksListFragment toggle={toggleState ? "close" : "open"} theme={theme}>
+		<LinksListFragment
+			toggle={toggleState ? "close" : "open"}
+			theme={theme}
+			css={{ backgroundColor, borderBottom }}
+		>
 			{links.map((linkObject) => (
 				<LinksListItem key={linkObject.url} theme={theme}>
 					<Anchor

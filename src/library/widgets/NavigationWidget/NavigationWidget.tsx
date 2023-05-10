@@ -18,6 +18,8 @@ export interface NavigationWidgetDataShape {
 	brandIcon?: string;
 	navLinksData: NavLinkFragmentDataShape[];
 	isolatedLink: NavLinkFragmentDataShape;
+	backgroundColor?: string;
+	borderBottom?: string;
 }
 
 const Container = styled("nav", {
@@ -27,7 +29,7 @@ const Container = styled("nav", {
 	backdropFilter: "blur(48px)",
 
 	"@br640": {
-		padding: `${respx(8)} ${respx(48)}`,
+		padding: `${respx(5)} ${respx(48)}`,
 	},
 
 	variants: {
@@ -175,6 +177,8 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 	brandIcon,
 	navLinksData,
 	isolatedLink,
+	backgroundColor,
+	borderBottom,
 }) => {
 	const [linksClosed, setlinksClosed] = useState(() => true);
 	const togglelinksClosed = () =>
@@ -191,9 +195,12 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 	};
 
 	return (
-		<Container theme={theme}>
+		<Container theme={theme} css={{ backgroundColor, borderBottom }}>
 			<Wrapper>
-				<BrandLinksContainer theme={theme}>
+				<BrandLinksContainer
+					theme={theme}
+					css={{ backgroundColor, borderBottom }}
+				>
 					<BrandContainer theme={theme}>
 						<BrandWrapper>
 							{brandIcon && <BrandIcon src={brandIcon} />}
