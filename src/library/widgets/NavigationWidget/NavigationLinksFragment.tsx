@@ -47,6 +47,8 @@ const LinksListFragment = styled("ul", {
 		},
 		theme: {
 			light: {
+				backgroundColor: "$gray02",
+				borderBottom: "1px solid $gray0",
 				"@br640": {
 					borderBottom: "none",
 				},
@@ -59,6 +61,8 @@ const LinksListFragment = styled("ul", {
 				},
 			},
 			dark: {
+				backgroundColor: "$black06",
+				borderBottom: "1px solid $black04",
 				"@br640": {
 					borderBottom: "none",
 				},

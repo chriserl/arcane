@@ -221,6 +221,8 @@ export const NavigationWidget: FC<NavigationWidgetDataShape> = ({
 						toggleState={linksClosed}
 						links={navLinksData}
 						isolatedLink={isolatedLink}
+						backgroundColor={backgroundColor}
+						borderBottom={borderBottom}
 					/>
 				</BrandLinksContainer>
 				<IsolatedLink media="tab">
