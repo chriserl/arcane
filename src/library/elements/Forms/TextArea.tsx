@@ -89,7 +89,6 @@ export const TextArea: FC<TextAreaShape> = ({
 				rows={rows}
 				onChange={(e) => stateFunction(e.target.value)}
 			/>
-			;
 		</Container>
 	);
 };

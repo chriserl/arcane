@@ -86,7 +86,6 @@ export const Input: FC<InputShape> = ({
 				type={type}
 				onChange={(e) => stateFunction(e.target.value)}
 			/>
-			;
 		</Container>
 	);
 };
