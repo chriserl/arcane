@@ -44,6 +44,8 @@ const NavigationData: NavigationWidgetDataShape = {
 	brand: { name: "Arcane", url: "/" },
 	navLinksData: navLinkObjects,
 	isolatedLink: isolatedLink,
+	borderBottom: "none",
+	backgroundColor: "transparent",
 };
 
 const Main = styled("main", {

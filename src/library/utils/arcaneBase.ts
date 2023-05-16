@@ -11,7 +11,7 @@ export const arcaneBase = globalCss({
 	":root": {
 		fontSize: "calc(14px + 0.32vh)",
 		"@media screen and (min-width: 600px)": {
-			fontSize: "calc(14px + 0.098vw)",
+			fontSize: "calc(14px + 0.084vw)",
 		},
 	},
 
