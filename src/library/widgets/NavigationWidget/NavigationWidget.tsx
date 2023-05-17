@@ -142,7 +142,7 @@ const BrandContainer = styled("div", {
 const BrandIcon = styled("img", {
 	width: respx(20),
 	height: respx(20),
-	objectFit: "cover",
+	objectFit: "contain",
 	marginRight: respx(5),
 });
 
