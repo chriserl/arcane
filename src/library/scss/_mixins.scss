@@ -1,0 +1,36 @@
+@mixin br414 {
+	@media screen and (min-width: 414px) {
+		@content;
+	}
+}
+
+@mixin br640 {
+	@media screen and (min-width: 640px) {
+		@content;
+	}
+}
+
+@mixin br1024 {
+	@media screen and (min-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin br1440 {
+	@media screen and (min-width: 1440px) {
+		@content;
+	}
+}
+
+@mixin flex($direction, $align, $justify) {
+	display: "flex";
+	flex-direction: $direction;
+	align-items: $align;
+	justify-content: $justify;
+}
+
+@mixin grid($align, $justify) {
+	display: "grid";
+	alignitems: $align;
+	justify-content: $justify;
+}

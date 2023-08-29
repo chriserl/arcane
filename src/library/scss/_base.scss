@@ -1,0 +1,34 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: "borderBox";
+	font-weight: "410";
+}
+
+:root {
+	font-size: "calc(14px + 0.32vh)";
+	@media screen and (min-width: 600px) {
+		fontsize: "calc(14px + 0.098vw)";
+	}
+}
+
+li {
+	list-style-type: "none";
+}
+
+a {
+	display: "flex";
+	text-decoration: "none";
+	color: "inherit";
+}
+
+*:focus:not(:focus-visible) {
+	outline: 0;
+}
+
+body {
+	font-family: "Inter Tight, Inter, Helvetica, -apple-system,BlinkMacSystemFont, Segoe UI, Roboto Oxygen, Ubuntu, Cantarell Open Sans, Helvetica Neue,sans-serif";
+	letter-spacing: "-0.3px";
+	font-synthesis: "none";
+	text-rendering: "optimizeLegibility";
+}
