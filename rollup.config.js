@@ -4,6 +4,7 @@ import typescript from "@rollup/plugin-typescript";
 import external from "rollup-plugin-peer-deps-external";
 import dts from "rollup-plugin-dts";
 import packageJSON from "./package.json";
+import sass from "rollup-plugin-sass";
 
 const config = [
 	{
@@ -32,7 +33,7 @@ const config = [
 	{
 		input: "src/library/index.ts",
 		output: [{ file: "lib/index.d.ts", format: "esm" }],
-		plugins: [dts()],
+		plugins: [dts(), sass()],
 	},
 ];
 

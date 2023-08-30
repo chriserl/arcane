@@ -56,7 +56,8 @@
 		"rollup": "^2.77.3",
 		"rollup-plugin-babel": "^4.4.0",
 		"rollup-plugin-dts": "^4.2.2",
-		"rollup-plugin-peer-deps-external": "^2.2.4"
+		"rollup-plugin-peer-deps-external": "^2.2.4",
+		"rollup-plugin-sass": "^1.12.20"
 	},
 	"peerDependencies": {
 		"@stitches/react": "^1.2.8",
