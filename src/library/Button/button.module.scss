@@ -1,7 +1,0 @@
-@import "../scss/variables";
-@import "../scss/functions";
-@import "../scss/els/button";
-
-.small {
-	@include button($primary, $caption1, 17, 3, 7, $gray03, $gray03);
-}

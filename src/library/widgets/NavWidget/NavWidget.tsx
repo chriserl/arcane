@@ -7,13 +7,13 @@ export interface NavLinkShape {
 	url: string;
 }
 
-export interface NavigationWidgetDataShape {
+export interface NavWidgetShape {
 	brand: NavLinkShape;
 	navLinksData?: NavLinkShape[];
 	isolatedLink?: NavLinkShape;
 }
 
-export const NavWidget: FC<NavigationWidgetDataShape> = ({
+export const NavWidget: FC<NavWidgetShape> = ({
 	brand,
 	navLinksData,
 	isolatedLink,
