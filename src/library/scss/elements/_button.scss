@@ -1,0 +1,16 @@
+@mixin button(
+	$color: $black00,
+	$fontSize: $body,
+	$padding: none,
+	$margin: none,
+	$border: none,
+	$borderRadius: 0,
+	$background: transparent
+) {
+	color: $color;
+	font-size: $fontSize;
+	margin: $margin;
+	border: $border;
+	border-radius: $borderRadius;
+	background-color: $background;
+}

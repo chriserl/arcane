@@ -1,0 +1,9 @@
+.button {
+	@include button(
+		$gray00,
+		$caption1,
+		respx(499),
+		respx(20),
+		$background: $black03
+	);
+}
