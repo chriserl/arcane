@@ -3,7 +3,7 @@ name: Publish Arcane
 on:
   push:
     branches:
-      - dev
+      - arcsass
 
 jobs:
   publish-gpr:
