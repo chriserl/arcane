@@ -1,7 +1,7 @@
 {
 	"name": "@chriserl/arcane",
 	"description": "Arcane UI Library by Montara Studio",
-	"version": "0.0.38",
+	"version": "0.0.39",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/chriserl/arcane.git"
