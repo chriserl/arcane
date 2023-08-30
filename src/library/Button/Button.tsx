@@ -1,27 +1,16 @@
 import { FC, MouseEvent, ReactNode } from "react";
+import buttonscss from "./button.module.scss";
 
 export interface ButtonShape {
-	color?: string;
-	fontSize?: string;
-	padding?: string;
-	margin?: string;
-	borderRadius?: string;
+	size: "small";
 	children?: ReactNode;
 	clickFunction?: Function;
 }
 
-export const Button: FC<ButtonShape> = ({
-	color,
-	fontSize,
-	padding,
-	margin,
-	borderRadius,
-	children,
-	clickFunction,
-}) => {
+export const Button: FC<ButtonShape> = ({ size, children, clickFunction }) => {
 	return (
 		<button
-			style={{ color, fontSize, padding, margin, borderRadius }}
+			className={buttonscss[size]}
 			onClick={(clickEvent: MouseEvent) =>
 				clickFunction && clickFunction(clickEvent)
 			}

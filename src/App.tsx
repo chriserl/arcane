@@ -8,7 +8,7 @@ import { Button } from "./library/Button/Button";
 const Main = styled("main", {
 	width: "100^",
 	height: "72vh",
-	backgroundColor: "$gray02",
+	//backgroundColor: "$gray02",
 	flexContainer: {
 		direction: "row",
 		align: "center",
@@ -22,7 +22,7 @@ function App() {
 	return (
 		<div className="App">
 			<Main>
-				<Button fontSize="">ArcSass</Button>
+				<Button size="small">ArcButton</Button>
 			</Main>
 		</div>
 	);

@@ -1,9 +1,7 @@
-.button {
-	@include button(
-		$gray00,
-		$caption1,
-		respx(499),
-		respx(20),
-		$background: $black03
-	);
+@import "../scss/variables";
+@import "../scss/functions";
+@import "../scss/els/button";
+
+.small {
+	@include button($primary, $caption1, 17, 3, 7, $gray03, $gray03);
 }

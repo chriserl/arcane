@@ -1,0 +1,19 @@
+@import "../variables";
+@import "../functions";
+
+@mixin button(
+	$color,
+	$fontSize,
+	$lrPad: 0,
+	$tbPad: 0,
+	$radius: 0,
+	$background: transparent,
+	$borderColor: transparent
+) {
+	color: $color;
+	font-size: $fontSize;
+	padding: respx($tbPad) respx($lrPad);
+	border-radius: respx($radius);
+	border: 1.4px solid $borderColor;
+	background-color: $background;
+}
