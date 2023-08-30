@@ -2,9 +2,6 @@
 	"name": "@chriserl/arcane",
 	"description": "Arcane UI Library by Montara Studio",
 	"version": "0.0.38",
-	"main": "lib/index.js",
-	"types": "lib/index.d.ts",
-	"type": "module",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/chriserl/arcane.git"
@@ -18,7 +15,6 @@
 		"url": "https://github.com/chriserl/arcane/issues"
 	},
 	"dependencies": {
-		"@stitches/react": "^1.2.8",
 		"@types/node": "^16.7.13",
 		"@types/react": "^18.0.17",
 		"@types/react-dom": "^18.0.6",
@@ -51,16 +47,9 @@
 		]
 	},
 	"devDependencies": {
-		"@rollup/plugin-typescript": "^8.3.4",
-		"boxicons": "^2.1.2",
-		"rollup": "^2.77.3",
-		"rollup-plugin-babel": "^4.4.0",
-		"rollup-plugin-dts": "^4.2.2",
-		"rollup-plugin-peer-deps-external": "^2.2.4",
-		"rollup-plugin-sass": "^1.12.20"
+		"boxicons": "^2.1.4"
 	},
 	"peerDependencies": {
-		"@stitches/react": "^1.2.8",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	}

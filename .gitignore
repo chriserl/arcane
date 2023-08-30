@@ -12,6 +12,9 @@
 /build
 /lib
 /dist
+/src/App.tsx
+/src.index.tsx
+/src/app.scss
 
 # misc
 .DS_Store
