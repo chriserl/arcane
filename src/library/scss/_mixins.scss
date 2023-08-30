@@ -23,14 +23,14 @@
 }
 
 @mixin flex($direction, $align, $justify) {
-	display: "flex";
+	display: flex;
 	flex-direction: $direction;
 	align-items: $align;
 	justify-content: $justify;
 }
 
 @mixin grid($align, $justify) {
-	display: "grid";
+	display: grid;
 	alignitems: $align;
 	justify-content: $justify;
 }

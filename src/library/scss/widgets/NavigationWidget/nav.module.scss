@@ -1,0 +1,117 @@
+@import "../../variables";
+@import "../../mixins";
+@import "../../functions";
+@import "../../els/button";
+
+.navscss {
+	width: 100%;
+	position: relative;
+	z-index: 10;
+	padding: respx(12) respx(16);
+	padding-left: respx(20);
+	background-color: $gray01;
+	@include flex(row, center, space-between);
+	@include br640 {
+		padding: respx(8) respx(48);
+	}
+
+	.brandLinksWrapper {
+		width: 100%;
+		@include br640 {
+			@include flex(row, center, flex-start);
+		}
+
+		.brandWrapper {
+			width: 100%;
+			@include flex(row, center, space-between);
+			@include br640 {
+				width: max-content;
+			}
+
+			.brand {
+				font-size: $body;
+				font-weight: $medium;
+				color: $black05;
+			}
+
+			.closeBtn {
+				@include button($black05, $heading3, 4, 4);
+				@include br640 {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.smLinksList,
+	.lgLinksList {
+		width: 100%;
+		padding-top: respx(5);
+		padding-bottom: respx(25);
+
+		.linkItem,
+		.smIsoLink {
+			border-bottom: 1.2px solid $gray04;
+
+			.link {
+				font-size: $caption2;
+				color: $black03;
+				padding: respx(17) 0 respx(3);
+				padding-left: respx(1);
+				margin-bottom: respx(4);
+				:hover {
+					color: $black04;
+				}
+			}
+		}
+
+		.smIsoLink {
+			border-bottom: none;
+			.link {
+				color: $primary;
+			}
+		}
+
+		@include br640 {
+			width: max-content;
+			padding-top: 0;
+			padding-bottom: 0;
+			margin-top: respx(-8);
+			margin-left: respx(40);
+
+			.linkItem {
+				margin-right: respx(20);
+				border-bottom: none;
+			}
+
+			.smIsoLink {
+				display: none;
+			}
+		}
+	}
+
+	.smLinksList {
+		position: absolute;
+		left: 0;
+		z-index: 20;
+		padding: respx(12) respx(16);
+		padding-left: respx(20);
+		background-color: $gray01;
+	}
+
+	.lgLinksList {
+		display: none;
+		@include br640 {
+			@include flex(row, center, center);
+		}
+	}
+
+	.lgIsoLink {
+		font-size: $caption2;
+		color: $primary;
+		display: none;
+		@include br640 {
+			display: flex;
+		}
+	}
+}

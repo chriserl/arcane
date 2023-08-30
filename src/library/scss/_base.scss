@@ -1,25 +1,25 @@
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: "borderBox";
-	font-weight: "400";
+	box-sizing: border-box;
+	font-weight: 400;
 }
 
 :root {
-	font-size: "calc(14px + 0.32vh)";
-	@media screen and (min-width: 600px) {
-		fontsize: "calc(14px + 0.098vw)";
+	font-size: calc(14px + 0.32vh);
+	@media screen and (min-width: 640px) {
+		font-size: calc(14px + 0.098vw);
 	}
 }
 
 li {
-	list-style-type: "none";
+	list-style-type: none;
 }
 
 a {
-	display: "flex";
-	text-decoration: "none";
-	color: "inherit";
+	display: flex;
+	text-decoration: none;
+	color: inherit;
 }
 
 *:focus:not(:focus-visible) {
@@ -28,7 +28,7 @@ a {
 
 body {
 	font-family: "Inter Tight, Inter, Helvetica, -apple-system,BlinkMacSystemFont, Segoe UI, Roboto Oxygen, Ubuntu, Cantarell Open Sans, Helvetica Neue,sans-serif";
-	letter-spacing: "-0.3px";
-	font-synthesis: "none";
-	text-rendering: "optimizeLegibility";
+	letter-spacing: -0.3px;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
 }
